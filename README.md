@@ -1,41 +1,51 @@
 # Image Background Remover
 
-Online image background remover powered by Remove.bg API, built with Next.js + Tailwind CSS, deployed on Cloudflare.
+免费在线背景去除工具，AI 驱动，秒级处理。
 
-## Tech Stack
+## 功能
 
-- **Frontend**: Next.js 14 + Tailwind CSS
-- **API**: Cloudflare Workers (proxy to Remove.bg)
-- **Hosting**: Cloudflare Pages
+- 📤 拖拽 / 点击上传（JPG、PNG、WebP，最大 10MB）
+- ✨ AI 自动去除背景（由 Remove.bg 提供）
+- 🎚️ 原图 vs 结果对比滑块
+- ⬇️ 一键下载透明 PNG
+- 🔒 图片不存储，处理完即释放
+- 📱 移动端适配
 
-## Getting Started
+## 技术栈
 
-1. Clone the repo
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create `.env.local` and add your Remove.bg API key:
-   ```
-   REMOVEBG_API_KEY=your_api_key_here
-   ```
-4. Run the dev server:
-   ```bash
-   npm run dev
-   ```
+- **前端**：Next.js 14 + TypeScript + Tailwind CSS
+- **后端**：Next.js API Routes
+- **AI**：Remove.bg API
+- **部署**：Cloudflare Pages
 
-## Deployment (Cloudflare Pages)
+## 本地开发
 
-1. Connect your GitHub repo to Cloudflare Pages
-2. Set build command: `npm run build`
-3. Set output directory: `.next`
-4. Add environment variable: `REMOVEBG_API_KEY`
+```bash
+# 1. 安装依赖
+npm install
 
-## Features
+# 2. 配置环境变量
+cp .env.example .env.local
+# 编辑 .env.local，填入你的 Remove.bg API Key
 
-- Drag & drop or click to upload (JPG, PNG, WEBP, max 10MB)
-- AI-powered background removal via Remove.bg API
-- Side-by-side comparison of original and processed image
-- One-click PNG download
-- No storage — images processed in memory only
-- Mobile responsive
+# 3. 启动开发服务器
+npm run dev
+```
+
+访问 http://localhost:3000
+
+## 部署到 Cloudflare Pages
+
+1. 将代码 push 到 GitHub
+2. 在 Cloudflare Pages 连接 GitHub 仓库
+3. Build 配置：
+   - Framework preset: `Next.js`
+   - Build command: `npm run build`
+   - Build output directory: `.next`
+4. 环境变量：添加 `REMOVEBG_API_KEY`
+
+## 环境变量
+
+| 变量名 | 说明 |
+|--------|------|
+| `REMOVEBG_API_KEY` | Remove.bg API Key（[获取地址](https://www.remove.bg/api)） |
