@@ -4,49 +4,56 @@ export const runtime = 'edge'
 
 export async function POST(request: NextRequest) {
   try {
-    const formData = await request.formData()
-    const imageFile = formData.get('image') as File | null
-
-    if (!imageFile) {
-      return NextResponse.json({ error: 'No image provided', code: 'NO_IMAGE' }, { status: 400 })
-    }
-
-    if (imageFile.size > 10 * 1024 * 1024) {
-      return NextResponse.json({ error: 'File too large (max 10MB)', code: 'FILE_TOO_LARGE' }, { status: 413 })
-    }
-
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp']
-    if (!allowedTypes.includes(imageFile.type)) {
-      return NextResponse.json({ error: 'Invalid format. Only JPG, PNG, WebP allowed', code: 'INVALID_FORMAT' }, { status: 415 })
-    }
-
     const apiKey = process.env.REMOVEBG_API_KEY
     if (!apiKey) {
       return NextResponse.json({ error: 'API key not configured', code: 'CONFIG_ERROR' }, { status: 500 })
     }
 
-    const removeBgForm = new FormData()
-    removeBgForm.append('image_file', imageFile, imageFile.name)
-    removeBgForm.append('size', 'full')
+    // 接收 JSON body: { image: "base64string", mimeType: "image/jpeg" }
+    const body = await request.json() as { image?: string; mimeType?: string }
+    const { image: base64Image, mimeType = 'image/jpeg' } = body
 
+    if (!base64Image) {
+      return NextResponse.json({ error: 'No image provided', code: 'NO_IMAGE' }, { status: 400 })
+    }
+
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp']
+    if (!allowedTypes.includes(mimeType)) {
+      return NextResponse.json({ error: 'Invalid format. Only JPG, PNG, WebP allowed', code: 'INVALID_FORMAT' }, { status: 415 })
+    }
+
+    // 检查 base64 大小（约为原文件的 1.37 倍，10MB 原始 ≈ 13.7MB base64）
+    if (base64Image.length > 14 * 1024 * 1024) {
+      return NextResponse.json({ error: 'File too large (max 10MB)', code: 'FILE_TOO_LARGE' }, { status: 413 })
+    }
+
+    // 使用 remove.bg 的 base64 接口，避免 multipart FormData 在 Edge Runtime 的兼容性问题
     const response = await fetch('https://api.remove.bg/v1.0/removebg', {
       method: 'POST',
-      headers: { 'X-Api-Key': apiKey },
-      body: removeBgForm,
+      headers: {
+        'X-Api-Key': apiKey,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        image_file_b64: base64Image,
+        size: 'full',
+        type: 'auto',
+      }),
     })
 
     if (!response.ok) {
+      const errText = await response.text().catch(() => '')
       if (response.status === 402) {
         return NextResponse.json({ error: 'API quota exceeded', code: 'API_QUOTA_EXCEEDED' }, { status: 402 })
       }
       if (response.status === 403) {
         return NextResponse.json({ error: 'Invalid API key', code: 'INVALID_API_KEY' }, { status: 403 })
       }
-      return NextResponse.json({ error: 'Remove.bg API error', code: 'API_ERROR' }, { status: 502 })
+      return NextResponse.json({ error: `Remove.bg API error: ${errText}`, code: 'API_ERROR' }, { status: 502 })
     }
 
     const resultBuffer = await response.arrayBuffer()
-    
+
     return new NextResponse(resultBuffer, {
       status: 200,
       headers: {
@@ -55,8 +62,8 @@ export async function POST(request: NextRequest) {
     })
   } catch (error) {
     console.error('Remove-bg API error:', error)
-    return NextResponse.json({ 
-      error: 'Internal server error', 
+    return NextResponse.json({
+      error: 'Internal server error',
       code: 'INTERNAL_ERROR',
       details: error instanceof Error ? error.message : String(error)
     }, { status: 500 })

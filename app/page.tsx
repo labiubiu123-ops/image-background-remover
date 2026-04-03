@@ -63,20 +63,14 @@ export default function Home() {
     const startTime = Date.now()
 
     try {
-      // 将 base64 转回 Blob，用 multipart 发送（不传 base64 字符串，减少带宽）
+      // 直接发送 base64 JSON，避免 Edge Runtime FormData 兼容性问题
       const base64Data = originalImage.split(',')[1]
       const mimeType = originalImage.match(/data:([^;]+);/)?.[1] || 'image/jpeg'
-      const binary = atob(base64Data)
-      const bytes = new Uint8Array(binary.length)
-      for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i)
-      const blob = new Blob([bytes], { type: mimeType })
-
-      const fd = new FormData()
-      fd.append('image', blob, `${originalFileName}.${mimeType.split('/')[1]}`)
 
       const response = await fetch('/api/remove-bg', {
         method: 'POST',
-        body: fd,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: base64Data, mimeType }),
       })
 
       if (!response.ok) {
