@@ -53,7 +53,12 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'image/png',
       },
     })
-  } catch {
-    return NextResponse.json({ error: 'Internal server error', code: 'INTERNAL_ERROR' }, { status: 500 })
+  } catch (error) {
+    console.error('Remove-bg API error:', error)
+    return NextResponse.json({ 
+      error: 'Internal server error', 
+      code: 'INTERNAL_ERROR',
+      details: error instanceof Error ? error.message : String(error)
+    }, { status: 500 })
   }
 }
