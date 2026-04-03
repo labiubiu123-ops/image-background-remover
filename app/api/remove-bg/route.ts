@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-export const runtime = 'edge'
-
 export async function POST(request: NextRequest) {
   try {
     const apiKey = process.env.REMOVEBG_API_KEY
@@ -9,7 +7,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'API key not configured', code: 'CONFIG_ERROR' }, { status: 500 })
     }
 
-    // 接收 JSON body: { image: "base64string", mimeType: "image/jpeg" }
     const body = await request.json() as { image?: string; mimeType?: string }
     const { image: base64Image, mimeType = 'image/jpeg' } = body
 
@@ -22,12 +19,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid format. Only JPG, PNG, WebP allowed', code: 'INVALID_FORMAT' }, { status: 415 })
     }
 
-    // 检查 base64 大小（约为原文件的 1.37 倍，10MB 原始 ≈ 13.7MB base64）
     if (base64Image.length > 14 * 1024 * 1024) {
       return NextResponse.json({ error: 'File too large (max 10MB)', code: 'FILE_TOO_LARGE' }, { status: 413 })
     }
 
-    // 使用 remove.bg 的 base64 接口，避免 multipart FormData 在 Edge Runtime 的兼容性问题
     const response = await fetch('https://api.remove.bg/v1.0/removebg', {
       method: 'POST',
       headers: {
@@ -43,6 +38,7 @@ export async function POST(request: NextRequest) {
 
     if (!response.ok) {
       const errText = await response.text().catch(() => '')
+      console.error('remove.bg error:', response.status, errText)
       if (response.status === 402) {
         return NextResponse.json({ error: 'API quota exceeded', code: 'API_QUOTA_EXCEEDED' }, { status: 402 })
       }
@@ -61,7 +57,7 @@ export async function POST(request: NextRequest) {
       },
     })
   } catch (error) {
-    console.error('Remove-bg API error:', error)
+    console.error('Remove-bg handler error:', error)
     return NextResponse.json({
       error: 'Internal server error',
       code: 'INTERNAL_ERROR',
