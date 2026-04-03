@@ -1,5 +1,5 @@
 {
-  "timestamp": 1775224214240,
+  "timestamp": 1775228743133,
   "outputDir": ".vercel/output/static/_worker.js",
   "versions": {
     "@cloudflare/next-on-pages": "1.13.16"
@@ -8,37 +8,7 @@
     "functions": {
       "invalid": [],
       "middleware": [],
-      "edge": [
-        {
-          "relativePath": "/api/remove-bg.func",
-          "config": {
-            "runtime": "edge",
-            "name": "api/remove-bg",
-            "deploymentTarget": "v8-worker",
-            "entrypoint": "index.js",
-            "assets": [],
-            "framework": {
-              "slug": "nextjs",
-              "version": "15.0.0"
-            },
-            "environment": {
-              "__NEXT_BUILD_ID": "YwC1fWq8_q6gNhfyOpioA",
-              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "eMo2PwOYJC9tlBwwTsjyA8jO+Q1OZN67BWNOQgJwztY=",
-              "__NEXT_PREVIEW_MODE_ID": "f7668d71a4b9d0c10f1748842c238bfb",
-              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "be35d819a6140c79d45e52ff0ae8e08638c7d4cfbbaa3f0ae374b8c48412dea6",
-              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "49aae3a53aa1902b238b54f5f62309d6a40e3908563df9cbfa8d273e0bb676c0"
-            }
-          },
-          "route": {
-            "path": "/api/remove-bg",
-            "overrides": [
-              "/api/remove-bg.rsc"
-            ]
-          },
-          "outputPath": "__next-on-pages-dist__/functions/api/remove-bg.func.js",
-          "outputByteSize": 244068
-        }
-      ],
+      "edge": [],
       "prerendered": [
         {
           "relativePath": "/index.func",
@@ -117,8 +87,8 @@
               "node_modules/next/dist/shared/lib/router/utils/route-regex.js": "node_modules/next/dist/shared/lib/router/utils/route-regex.js",
               "node_modules/next/dist/server/web/spec-extension/adapters/next-request.js": "node_modules/next/dist/server/web/spec-extension/adapters/next-request.js",
               "node_modules/next/dist/compiled/next-server/pages.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages.runtime.prod.js",
-              "node_modules/next/dist/server/app-render/action-async-storage.external.js": "node_modules/next/dist/server/app-render/action-async-storage.external.js",
               "node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+              "node_modules/next/dist/server/app-render/action-async-storage.external.js": "node_modules/next/dist/server/app-render/action-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-async-storage.external.js": "node_modules/next/dist/server/app-render/work-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js": "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
               "node_modules/react/jsx-runtime.js": "node_modules/react/jsx-runtime.js",
@@ -126,14 +96,14 @@
               "node_modules/next/dist/server/response-cache/index.js": "node_modules/next/dist/server/response-cache/index.js",
               "node_modules/next/dist/server/lib/incremental-cache/index.js": "node_modules/next/dist/server/lib/incremental-cache/index.js",
               "node_modules/next/dist/server/web/sandbox/index.js": "node_modules/next/dist/server/web/sandbox/index.js",
-              "node_modules/next/dist/lib/wait.js": "node_modules/next/dist/lib/wait.js",
               "node_modules/next/dist/server/node-environment-baseline.js": "node_modules/next/dist/server/node-environment-baseline.js",
+              "node_modules/next/dist/lib/wait.js": "node_modules/next/dist/lib/wait.js",
               "node_modules/next/dist/lib/detached-promise.js": "node_modules/next/dist/lib/detached-promise.js",
               "node_modules/next/dist/server/client-component-renderer-logger.js": "node_modules/next/dist/server/client-component-renderer-logger.js",
               "node_modules/@next/env/package.json": "node_modules/@next/env/package.json",
-              "node_modules/next/dist/server/node-environment-extensions/random.js": "node_modules/next/dist/server/node-environment-extensions/random.js",
               "node_modules/next/dist/server/node-environment-extensions/date.js": "node_modules/next/dist/server/node-environment-extensions/date.js",
               "node_modules/next/dist/server/node-environment-extensions/web-crypto.js": "node_modules/next/dist/server/node-environment-extensions/web-crypto.js",
+              "node_modules/next/dist/server/node-environment-extensions/random.js": "node_modules/next/dist/server/node-environment-extensions/random.js",
               "node_modules/next/dist/server/node-environment-extensions/node-crypto.js": "node_modules/next/dist/server/node-environment-extensions/node-crypto.js",
               "node_modules/next/dist/server/lib/etag.js": "node_modules/next/dist/server/lib/etag.js",
               "node_modules/next/dist/server/lib/revalidate.js": "node_modules/next/dist/server/lib/revalidate.js",
@@ -155,8 +125,8 @@
               "node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js": "node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js",
               "node_modules/@next/env/dist/index.js": "node_modules/@next/env/dist/index.js",
               "node_modules/next/dist/server/lib/module-loader/node-module-loader.js": "node_modules/next/dist/server/lib/module-loader/node-module-loader.js",
-              "node_modules/next/dist/server/route-modules/pages/module.compiled.js": "node_modules/next/dist/server/route-modules/pages/module.compiled.js",
               "node_modules/next/dist/server/route-modules/app-page/module.compiled.js": "node_modules/next/dist/server/route-modules/app-page/module.compiled.js",
+              "node_modules/next/dist/server/route-modules/pages/module.compiled.js": "node_modules/next/dist/server/route-modules/pages/module.compiled.js",
               "node_modules/next/dist/shared/lib/segment.js": "node_modules/next/dist/shared/lib/segment.js",
               "node_modules/next/dist/shared/lib/escape-regexp.js": "node_modules/next/dist/shared/lib/escape-regexp.js",
               "node_modules/next/dist/server/base-http/helpers.js": "node_modules/next/dist/server/base-http/helpers.js",
@@ -181,9 +151,9 @@
               "node_modules/next/dist/server/web/sandbox/sandbox.js": "node_modules/next/dist/server/web/sandbox/sandbox.js",
               "node_modules/next/dist/server/web/sandbox/context.js": "node_modules/next/dist/server/web/sandbox/context.js",
               "node_modules/next/dist/lib/redirect-status.js": "node_modules/next/dist/lib/redirect-status.js",
+              "node_modules/next/dist/lib/is-edge-runtime.js": "node_modules/next/dist/lib/is-edge-runtime.js",
               "node_modules/next/dist/server/utils.js": "node_modules/next/dist/server/utils.js",
               "node_modules/next/dist/server/render-result.js": "node_modules/next/dist/server/render-result.js",
-              "node_modules/next/dist/lib/is-edge-runtime.js": "node_modules/next/dist/lib/is-edge-runtime.js",
               "node_modules/next/dist/server/server-utils.js": "node_modules/next/dist/server/server-utils.js",
               "node_modules/next/dist/server/send-response.js": "node_modules/next/dist/server/send-response.js",
               "node_modules/next/dist/lib/fallback.js": "node_modules/next/dist/lib/fallback.js",
@@ -209,8 +179,8 @@
               "node_modules/next/dist/server/web/adapter.js": "node_modules/next/dist/server/web/adapter.js",
               "node_modules/next/dist/server/instrumentation/utils.js": "node_modules/next/dist/server/instrumentation/utils.js",
               "node_modules/next/dist/server/lib/prefetch-cache-scopes.js": "node_modules/next/dist/server/lib/prefetch-cache-scopes.js",
-              "node_modules/next/dist/server/normalizers/request/postponed.js": "node_modules/next/dist/server/normalizers/request/postponed.js",
               "node_modules/next/dist/server/normalizers/request/rsc.js": "node_modules/next/dist/server/normalizers/request/rsc.js",
+              "node_modules/next/dist/server/normalizers/request/postponed.js": "node_modules/next/dist/server/normalizers/request/postponed.js",
               "node_modules/next/dist/server/normalizers/request/prefetch-rsc.js": "node_modules/next/dist/server/normalizers/request/prefetch-rsc.js",
               "node_modules/next/dist/server/normalizers/request/next-data.js": "node_modules/next/dist/server/normalizers/request/next-data.js",
               "node_modules/next/dist/server/lib/experimental/ppr.js": "node_modules/next/dist/server/lib/experimental/ppr.js",
@@ -258,11 +228,11 @@
               "node_modules/next/dist/server/web/sandbox/resource-managers.js": "node_modules/next/dist/server/web/sandbox/resource-managers.js",
               "node_modules/next/dist/server/lib/is-ipv6.js": "node_modules/next/dist/server/lib/is-ipv6.js",
               "node_modules/next/dist/server/route-matchers/locale-route-matcher.js": "node_modules/next/dist/server/route-matchers/locale-route-matcher.js",
-              "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js": "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js",
               "node_modules/next/dist/server/route-matchers/app-page-route-matcher.js": "node_modules/next/dist/server/route-matchers/app-page-route-matcher.js",
+              "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js": "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js",
               "node_modules/next/dist/server/route-matchers/app-route-route-matcher.js": "node_modules/next/dist/server/route-matchers/app-route-route-matcher.js",
-              "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js",
               "node_modules/next/dist/server/route-matchers/pages-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-route-matcher.js",
+              "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js",
               "node_modules/next/dist/server/web/globals.js": "node_modules/next/dist/server/web/globals.js",
               "node_modules/next/dist/server/async-storage/request-store.js": "node_modules/next/dist/server/async-storage/request-store.js",
               "node_modules/next/dist/server/async-storage/with-work-store.js": "node_modules/next/dist/server/async-storage/with-work-store.js",
@@ -288,15 +258,15 @@
               "node_modules/next/dist/shared/lib/router/utils/is-dynamic.js": "node_modules/next/dist/shared/lib/router/utils/is-dynamic.js",
               "node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js": "node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js",
               "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js": "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js",
-              "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-turbo-experimental.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-turbo-experimental.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js",
+              "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js",
               "node_modules/next/dist/compiled/ws/index.js": "node_modules/next/dist/compiled/ws/index.js",
               "node_modules/next/dist/server/normalizers/built/app/index.js": "node_modules/next/dist/server/normalizers/built/app/index.js",
               "node_modules/next/dist/server/normalizers/built/pages/index.js": "node_modules/next/dist/server/normalizers/built/pages/index.js",
-              "node_modules/next/dist/server/route-modules/pages/module.js": "node_modules/next/dist/server/route-modules/pages/module.js",
               "node_modules/next/dist/server/route-modules/app-page/module.js": "node_modules/next/dist/server/route-modules/app-page/module.js",
+              "node_modules/next/dist/server/route-modules/pages/module.js": "node_modules/next/dist/server/route-modules/pages/module.js",
               "node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js": "node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js",
               "node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js": "node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js",
               "node_modules/next/dist/server/app-render/clean-async-snapshot-instance.js": "node_modules/next/dist/server/app-render/clean-async-snapshot-instance.js",
@@ -320,26 +290,26 @@
               "node_modules/next/dist/compiled/edge-runtime/index.js": "node_modules/next/dist/compiled/edge-runtime/index.js",
               "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json",
               "node_modules/next/dist/server/render.js": "node_modules/next/dist/server/render.js",
-              "node_modules/next/dist/server/route-modules/route-module.js": "node_modules/next/dist/server/route-modules/route-module.js",
               "node_modules/next/dist/server/app-render/app-render.js": "node_modules/next/dist/server/app-render/app-render.js",
+              "node_modules/next/dist/server/route-modules/route-module.js": "node_modules/next/dist/server/route-modules/route-module.js",
               "node_modules/next/dist/compiled/debug/package.json": "node_modules/next/dist/compiled/debug/package.json",
               "node_modules/next/dist/server/normalizers/built/app/app-bundle-path-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-bundle-path-normalizer.js",
+              "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/app/app-page-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-page-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/app/app-pathname-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-pathname-normalizer.js",
-              "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-bundle-path-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-bundle-path-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-page-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-page-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-pathname-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-pathname-normalizer.js",
-              "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/rsc/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/rsc/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/ssr/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/ssr/entrypoints.js",
+              "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/lib/semver-noop.js": "node_modules/next/dist/lib/semver-noop.js",
               "node_modules/next/dist/server/after/revalidation-utils.js": "node_modules/next/dist/server/after/revalidation-utils.js",
-              "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
-              "node_modules/next/dist/shared/lib/router/utils/add-locale.js": "node_modules/next/dist/shared/lib/router/utils/add-locale.js",
               "node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js",
+              "node_modules/next/dist/shared/lib/router/utils/add-locale.js": "node_modules/next/dist/shared/lib/router/utils/add-locale.js",
+              "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
               "node_modules/next/dist/compiled/@edge-runtime/cookies/package.json": "node_modules/next/dist/compiled/@edge-runtime/cookies/package.json",
               "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js",
               "node_modules/next/dist/compiled/debug/index.js": "node_modules/next/dist/compiled/debug/index.js",
@@ -371,10 +341,10 @@
               "node_modules/next/dist/server/app-render/create-error-handler.js": "node_modules/next/dist/server/app-render/create-error-handler.js",
               "node_modules/next/dist/server/app-render/get-short-dynamic-param-type.js": "node_modules/next/dist/server/app-render/get-short-dynamic-param-type.js",
               "node_modules/next/dist/server/app-render/get-segment-param.js": "node_modules/next/dist/server/app-render/get-segment-param.js",
-              "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js": "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js",
               "node_modules/next/dist/server/app-render/get-script-nonce-from-header.js": "node_modules/next/dist/server/app-render/get-script-nonce-from-header.js",
-              "node_modules/next/dist/server/app-render/action-handler.js": "node_modules/next/dist/server/app-render/action-handler.js",
+              "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js": "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js",
               "node_modules/next/dist/server/app-render/create-flight-router-state-from-loader-tree.js": "node_modules/next/dist/server/app-render/create-flight-router-state-from-loader-tree.js",
+              "node_modules/next/dist/server/app-render/action-handler.js": "node_modules/next/dist/server/app-render/action-handler.js",
               "node_modules/next/dist/server/app-render/server-inserted-html.js": "node_modules/next/dist/server/app-render/server-inserted-html.js",
               "node_modules/next/dist/server/app-render/required-scripts.js": "node_modules/next/dist/server/app-render/required-scripts.js",
               "node_modules/next/dist/server/app-render/make-get-server-inserted-html.js": "node_modules/next/dist/server/app-render/make-get-server-inserted-html.js",
@@ -399,13 +369,13 @@
               "node_modules/next/dist/server/normalizers/normalizers.js": "node_modules/next/dist/server/normalizers/normalizers.js",
               "node_modules/next/dist/server/normalizers/prefixing-normalizer.js": "node_modules/next/dist/server/normalizers/prefixing-normalizer.js",
               "node_modules/next/dist/server/normalizers/absolute-filename-normalizer.js": "node_modules/next/dist/server/normalizers/absolute-filename-normalizer.js",
-              "node_modules/next/dist/server/normalizers/underscore-normalizer.js": "node_modules/next/dist/server/normalizers/underscore-normalizer.js",
               "node_modules/next/dist/server/normalizers/wrap-normalizer-fn.js": "node_modules/next/dist/server/normalizers/wrap-normalizer-fn.js",
+              "node_modules/next/dist/server/normalizers/underscore-normalizer.js": "node_modules/next/dist/server/normalizers/underscore-normalizer.js",
               "node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js": "node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js",
               "node_modules/next/dist/compiled/p-queue/package.json": "node_modules/next/dist/compiled/p-queue/package.json",
               "node_modules/next/dist/server/ReactDOMServerPages.js": "node_modules/next/dist/server/ReactDOMServerPages.js",
-              "node_modules/next/dist/server/optimize-amp.js": "node_modules/next/dist/server/optimize-amp.js",
               "node_modules/next/dist/lib/non-nullable.js": "node_modules/next/dist/lib/non-nullable.js",
+              "node_modules/next/dist/server/optimize-amp.js": "node_modules/next/dist/server/optimize-amp.js",
               "node_modules/next/dist/compiled/babel/code-frame.js": "node_modules/next/dist/compiled/babel/code-frame.js",
               "node_modules/next/dist/compiled/p-queue/index.js": "node_modules/next/dist/compiled/p-queue/index.js",
               "node_modules/next/dist/shared/lib/side-effect.js": "node_modules/next/dist/shared/lib/side-effect.js",
@@ -425,17 +395,17 @@
               "node_modules/next/dist/server/app-render/csrf-protection.js": "node_modules/next/dist/server/app-render/csrf-protection.js",
               "node_modules/next/dist/server/app-render/react-server.node.js": "node_modules/next/dist/server/app-render/react-server.node.js",
               "node_modules/next/dist/shared/lib/encode-uri-path.js": "node_modules/next/dist/shared/lib/encode-uri-path.js",
+              "node_modules/next/dist/client/components/match-segments.js": "node_modules/next/dist/client/components/match-segments.js",
+              "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js": "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js",
+              "node_modules/next/dist/server/app-render/get-preloadable-fonts.js": "node_modules/next/dist/server/app-render/get-preloadable-fonts.js",
+              "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js": "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js",
               "node_modules/next/dist/server/lib/app-dir-module.js": "node_modules/next/dist/server/lib/app-dir-module.js",
               "node_modules/next/dist/server/app-render/interop-default.js": "node_modules/next/dist/server/app-render/interop-default.js",
               "node_modules/next/dist/server/app-render/parse-loader-tree.js": "node_modules/next/dist/server/app-render/parse-loader-tree.js",
               "node_modules/next/dist/server/app-render/create-component-styles-and-scripts.js": "node_modules/next/dist/server/app-render/create-component-styles-and-scripts.js",
               "node_modules/next/dist/server/app-render/get-layer-assets.js": "node_modules/next/dist/server/app-render/get-layer-assets.js",
               "node_modules/next/dist/server/lib/patch-fetch.js": "node_modules/next/dist/server/lib/patch-fetch.js",
-              "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js": "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js",
               "node_modules/next/dist/client/components/parallel-route-default.js": "node_modules/next/dist/client/components/parallel-route-default.js",
-              "node_modules/next/dist/client/components/match-segments.js": "node_modules/next/dist/client/components/match-segments.js",
-              "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js": "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js",
-              "node_modules/next/dist/server/app-render/get-preloadable-fonts.js": "node_modules/next/dist/server/app-render/get-preloadable-fonts.js",
               "node_modules/next/dist/client/components/use-reducer.js": "node_modules/next/dist/client/components/use-reducer.js",
               "node_modules/next/dist/client/components/error-boundary.js": "node_modules/next/dist/client/components/error-boundary.js",
               "node_modules/next/dist/client/components/app-router-announcer.js": "node_modules/next/dist/client/components/app-router-announcer.js",
@@ -453,9 +423,9 @@
               "node_modules/next/dist/compiled/data-uri-to-buffer/package.json": "node_modules/next/dist/compiled/data-uri-to-buffer/package.json",
               "node_modules/next/dist/compiled/shell-quote/package.json": "node_modules/next/dist/compiled/shell-quote/package.json",
               "node_modules/next/dist/compiled/stacktrace-parser/package.json": "node_modules/next/dist/compiled/stacktrace-parser/package.json",
-              "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js": "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/find-head-in-cache.js": "node_modules/next/dist/client/components/router-reducer/reducers/find-head-in-cache.js",
               "node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js": "node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js",
+              "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js": "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
               "node_modules/next/dist/client/components/router-reducer/fill-lazy-items-till-leaf-with-head.js": "node_modules/next/dist/client/components/router-reducer/fill-lazy-items-till-leaf-with-head.js",
               "node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js": "node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js",
               "node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js": "node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js",
@@ -486,18 +456,18 @@
               "node_modules/next/dist/client/components/router-reducer/create-router-cache-key.js": "node_modules/next/dist/client/components/router-reducer/create-router-cache-key.js",
               "node_modules/next/dist/client/components/react-dev-overlay/shared.js": "node_modules/next/dist/client/components/react-dev-overlay/shared.js",
               "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
-              "node_modules/next/dist/lib/metadata/get-metadata-route.js": "node_modules/next/dist/lib/metadata/get-metadata-route.js",
               "node_modules/next/dist/client/components/router-reducer/apply-flight-data.js": "node_modules/next/dist/client/components/router-reducer/apply-flight-data.js",
-              "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js",
-              "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js",
+              "node_modules/next/dist/lib/metadata/get-metadata-route.js": "node_modules/next/dist/lib/metadata/get-metadata-route.js",
               "node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js": "node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js",
+              "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/server-patch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/server-patch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/refresh-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/refresh-reducer.js",
-              "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/hmr-refresh-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/hmr-refresh-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js",
+              "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js",
+              "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js",
               "node_modules/next/dist/shared/lib/page-path/remove-page-path-tail.js": "node_modules/next/dist/shared/lib/page-path/remove-page-path-tail.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/format-webpack-messages.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/format-webpack-messages.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js",
@@ -545,15 +515,15 @@
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/get-socket-url.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/get-socket-url.js",
               "node_modules/next/dist/compiled/babel-packages/package.json": "node_modules/next/dist/compiled/babel-packages/package.json",
               "node_modules/next/dist/compiled/browserslist/package.json": "node_modules/next/dist/compiled/browserslist/package.json",
-              "node_modules/next/dist/compiled/json5/package.json": "node_modules/next/dist/compiled/json5/package.json",
               "node_modules/next/dist/compiled/lru-cache/package.json": "node_modules/next/dist/compiled/lru-cache/package.json",
+              "node_modules/next/dist/compiled/json5/package.json": "node_modules/next/dist/compiled/json5/package.json",
               "node_modules/next/dist/compiled/semver/package.json": "node_modules/next/dist/compiled/semver/package.json",
               "node_modules/next/dist/client/components/unstable-rethrow.js": "node_modules/next/dist/client/components/unstable-rethrow.js",
               "node_modules/scheduler/index.js": "node_modules/scheduler/index.js",
               "node_modules/next/dist/compiled/babel-packages/packages-bundle.js": "node_modules/next/dist/compiled/babel-packages/packages-bundle.js",
               "node_modules/next/dist/compiled/browserslist/index.js": "node_modules/next/dist/compiled/browserslist/index.js",
-              "node_modules/next/dist/compiled/json5/index.js": "node_modules/next/dist/compiled/json5/index.js",
               "node_modules/next/dist/compiled/lru-cache/index.js": "node_modules/next/dist/compiled/lru-cache/index.js",
+              "node_modules/next/dist/compiled/json5/index.js": "node_modules/next/dist/compiled/json5/index.js",
               "node_modules/next/dist/compiled/semver/index.js": "node_modules/next/dist/compiled/semver/index.js",
               "node_modules/streamsearch/package.json": "node_modules/streamsearch/package.json",
               "node_modules/next/dist/client/components/router-reducer/invalidate-cache-by-router-state.js": "node_modules/next/dist/client/components/router-reducer/invalidate-cache-by-router-state.js",
@@ -605,22 +575,22 @@
               "node_modules/caniuse-lite/dist/unpacker/browserVersions.js": "node_modules/caniuse-lite/dist/unpacker/browserVersions.js",
               "node_modules/caniuse-lite/dist/lib/statuses.js": "node_modules/caniuse-lite/dist/lib/statuses.js",
               "node_modules/caniuse-lite/dist/lib/supported.js": "node_modules/caniuse-lite/dist/lib/supported.js",
+              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogBody.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogBody.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogContent.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogContent.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/styles.js",
-              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/Overlay.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/Overlay.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Terminal/Terminal.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Terminal/Terminal.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/styles.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/VersionStalenessInfo.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/VersionStalenessInfo.js",
+              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/styles.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/Toast.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/Toast.js",
-              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/container/RuntimeError/GroupedStackFrames.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/container/RuntimeError/GroupedStackFrames.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/CodeFrame/index.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/CodeFrame/index.js",
-              "node_modules/caniuse-lite/data/browsers.js": "node_modules/caniuse-lite/data/browsers.js",
               "node_modules/caniuse-lite/data/browserVersions.js": "node_modules/caniuse-lite/data/browserVersions.js",
+              "node_modules/caniuse-lite/data/browsers.js": "node_modules/caniuse-lite/data/browsers.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/hooks/use-on-click-outside.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/hooks/use-on-click-outside.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/icons/FrameworkIcon.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/icons/FrameworkIcon.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/maintain--tab-focus.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/maintain--tab-focus.js",
@@ -780,8 +750,8 @@
               "node_modules/next/dist/shared/lib/router/utils/route-regex.js": "node_modules/next/dist/shared/lib/router/utils/route-regex.js",
               "node_modules/next/dist/server/web/spec-extension/adapters/next-request.js": "node_modules/next/dist/server/web/spec-extension/adapters/next-request.js",
               "node_modules/next/dist/compiled/next-server/pages.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages.runtime.prod.js",
-              "node_modules/next/dist/server/app-render/action-async-storage.external.js": "node_modules/next/dist/server/app-render/action-async-storage.external.js",
               "node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+              "node_modules/next/dist/server/app-render/action-async-storage.external.js": "node_modules/next/dist/server/app-render/action-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-async-storage.external.js": "node_modules/next/dist/server/app-render/work-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js": "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
               "node_modules/react/jsx-runtime.js": "node_modules/react/jsx-runtime.js",
@@ -789,14 +759,14 @@
               "node_modules/next/dist/server/response-cache/index.js": "node_modules/next/dist/server/response-cache/index.js",
               "node_modules/next/dist/server/lib/incremental-cache/index.js": "node_modules/next/dist/server/lib/incremental-cache/index.js",
               "node_modules/next/dist/server/web/sandbox/index.js": "node_modules/next/dist/server/web/sandbox/index.js",
-              "node_modules/next/dist/lib/wait.js": "node_modules/next/dist/lib/wait.js",
               "node_modules/next/dist/server/node-environment-baseline.js": "node_modules/next/dist/server/node-environment-baseline.js",
+              "node_modules/next/dist/lib/wait.js": "node_modules/next/dist/lib/wait.js",
               "node_modules/next/dist/lib/detached-promise.js": "node_modules/next/dist/lib/detached-promise.js",
               "node_modules/next/dist/server/client-component-renderer-logger.js": "node_modules/next/dist/server/client-component-renderer-logger.js",
               "node_modules/@next/env/package.json": "node_modules/@next/env/package.json",
-              "node_modules/next/dist/server/node-environment-extensions/random.js": "node_modules/next/dist/server/node-environment-extensions/random.js",
               "node_modules/next/dist/server/node-environment-extensions/date.js": "node_modules/next/dist/server/node-environment-extensions/date.js",
               "node_modules/next/dist/server/node-environment-extensions/web-crypto.js": "node_modules/next/dist/server/node-environment-extensions/web-crypto.js",
+              "node_modules/next/dist/server/node-environment-extensions/random.js": "node_modules/next/dist/server/node-environment-extensions/random.js",
               "node_modules/next/dist/server/node-environment-extensions/node-crypto.js": "node_modules/next/dist/server/node-environment-extensions/node-crypto.js",
               "node_modules/next/dist/server/lib/etag.js": "node_modules/next/dist/server/lib/etag.js",
               "node_modules/next/dist/server/lib/revalidate.js": "node_modules/next/dist/server/lib/revalidate.js",
@@ -818,8 +788,8 @@
               "node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js": "node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js",
               "node_modules/@next/env/dist/index.js": "node_modules/@next/env/dist/index.js",
               "node_modules/next/dist/server/lib/module-loader/node-module-loader.js": "node_modules/next/dist/server/lib/module-loader/node-module-loader.js",
-              "node_modules/next/dist/server/route-modules/pages/module.compiled.js": "node_modules/next/dist/server/route-modules/pages/module.compiled.js",
               "node_modules/next/dist/server/route-modules/app-page/module.compiled.js": "node_modules/next/dist/server/route-modules/app-page/module.compiled.js",
+              "node_modules/next/dist/server/route-modules/pages/module.compiled.js": "node_modules/next/dist/server/route-modules/pages/module.compiled.js",
               "node_modules/next/dist/shared/lib/segment.js": "node_modules/next/dist/shared/lib/segment.js",
               "node_modules/next/dist/shared/lib/escape-regexp.js": "node_modules/next/dist/shared/lib/escape-regexp.js",
               "node_modules/next/dist/server/base-http/helpers.js": "node_modules/next/dist/server/base-http/helpers.js",
@@ -844,9 +814,9 @@
               "node_modules/next/dist/server/web/sandbox/sandbox.js": "node_modules/next/dist/server/web/sandbox/sandbox.js",
               "node_modules/next/dist/server/web/sandbox/context.js": "node_modules/next/dist/server/web/sandbox/context.js",
               "node_modules/next/dist/lib/redirect-status.js": "node_modules/next/dist/lib/redirect-status.js",
+              "node_modules/next/dist/lib/is-edge-runtime.js": "node_modules/next/dist/lib/is-edge-runtime.js",
               "node_modules/next/dist/server/utils.js": "node_modules/next/dist/server/utils.js",
               "node_modules/next/dist/server/render-result.js": "node_modules/next/dist/server/render-result.js",
-              "node_modules/next/dist/lib/is-edge-runtime.js": "node_modules/next/dist/lib/is-edge-runtime.js",
               "node_modules/next/dist/server/server-utils.js": "node_modules/next/dist/server/server-utils.js",
               "node_modules/next/dist/server/send-response.js": "node_modules/next/dist/server/send-response.js",
               "node_modules/next/dist/lib/fallback.js": "node_modules/next/dist/lib/fallback.js",
@@ -872,8 +842,8 @@
               "node_modules/next/dist/server/web/adapter.js": "node_modules/next/dist/server/web/adapter.js",
               "node_modules/next/dist/server/instrumentation/utils.js": "node_modules/next/dist/server/instrumentation/utils.js",
               "node_modules/next/dist/server/lib/prefetch-cache-scopes.js": "node_modules/next/dist/server/lib/prefetch-cache-scopes.js",
-              "node_modules/next/dist/server/normalizers/request/postponed.js": "node_modules/next/dist/server/normalizers/request/postponed.js",
               "node_modules/next/dist/server/normalizers/request/rsc.js": "node_modules/next/dist/server/normalizers/request/rsc.js",
+              "node_modules/next/dist/server/normalizers/request/postponed.js": "node_modules/next/dist/server/normalizers/request/postponed.js",
               "node_modules/next/dist/server/normalizers/request/prefetch-rsc.js": "node_modules/next/dist/server/normalizers/request/prefetch-rsc.js",
               "node_modules/next/dist/server/normalizers/request/next-data.js": "node_modules/next/dist/server/normalizers/request/next-data.js",
               "node_modules/next/dist/server/lib/experimental/ppr.js": "node_modules/next/dist/server/lib/experimental/ppr.js",
@@ -921,11 +891,11 @@
               "node_modules/next/dist/server/web/sandbox/resource-managers.js": "node_modules/next/dist/server/web/sandbox/resource-managers.js",
               "node_modules/next/dist/server/lib/is-ipv6.js": "node_modules/next/dist/server/lib/is-ipv6.js",
               "node_modules/next/dist/server/route-matchers/locale-route-matcher.js": "node_modules/next/dist/server/route-matchers/locale-route-matcher.js",
-              "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js": "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js",
               "node_modules/next/dist/server/route-matchers/app-page-route-matcher.js": "node_modules/next/dist/server/route-matchers/app-page-route-matcher.js",
+              "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js": "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js",
               "node_modules/next/dist/server/route-matchers/app-route-route-matcher.js": "node_modules/next/dist/server/route-matchers/app-route-route-matcher.js",
-              "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js",
               "node_modules/next/dist/server/route-matchers/pages-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-route-matcher.js",
+              "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js",
               "node_modules/next/dist/server/web/globals.js": "node_modules/next/dist/server/web/globals.js",
               "node_modules/next/dist/server/async-storage/request-store.js": "node_modules/next/dist/server/async-storage/request-store.js",
               "node_modules/next/dist/server/async-storage/with-work-store.js": "node_modules/next/dist/server/async-storage/with-work-store.js",
@@ -951,15 +921,15 @@
               "node_modules/next/dist/shared/lib/router/utils/is-dynamic.js": "node_modules/next/dist/shared/lib/router/utils/is-dynamic.js",
               "node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js": "node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js",
               "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js": "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js",
-              "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-turbo-experimental.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-turbo-experimental.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js",
+              "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js",
               "node_modules/next/dist/compiled/ws/index.js": "node_modules/next/dist/compiled/ws/index.js",
               "node_modules/next/dist/server/normalizers/built/app/index.js": "node_modules/next/dist/server/normalizers/built/app/index.js",
               "node_modules/next/dist/server/normalizers/built/pages/index.js": "node_modules/next/dist/server/normalizers/built/pages/index.js",
-              "node_modules/next/dist/server/route-modules/pages/module.js": "node_modules/next/dist/server/route-modules/pages/module.js",
               "node_modules/next/dist/server/route-modules/app-page/module.js": "node_modules/next/dist/server/route-modules/app-page/module.js",
+              "node_modules/next/dist/server/route-modules/pages/module.js": "node_modules/next/dist/server/route-modules/pages/module.js",
               "node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js": "node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js",
               "node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js": "node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js",
               "node_modules/next/dist/server/app-render/clean-async-snapshot-instance.js": "node_modules/next/dist/server/app-render/clean-async-snapshot-instance.js",
@@ -983,26 +953,26 @@
               "node_modules/next/dist/compiled/edge-runtime/index.js": "node_modules/next/dist/compiled/edge-runtime/index.js",
               "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json",
               "node_modules/next/dist/server/render.js": "node_modules/next/dist/server/render.js",
-              "node_modules/next/dist/server/route-modules/route-module.js": "node_modules/next/dist/server/route-modules/route-module.js",
               "node_modules/next/dist/server/app-render/app-render.js": "node_modules/next/dist/server/app-render/app-render.js",
+              "node_modules/next/dist/server/route-modules/route-module.js": "node_modules/next/dist/server/route-modules/route-module.js",
               "node_modules/next/dist/compiled/debug/package.json": "node_modules/next/dist/compiled/debug/package.json",
               "node_modules/next/dist/server/normalizers/built/app/app-bundle-path-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-bundle-path-normalizer.js",
+              "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/app/app-page-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-page-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/app/app-pathname-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-pathname-normalizer.js",
-              "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-bundle-path-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-bundle-path-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-page-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-page-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-pathname-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-pathname-normalizer.js",
-              "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/rsc/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/rsc/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/ssr/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/ssr/entrypoints.js",
+              "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/lib/semver-noop.js": "node_modules/next/dist/lib/semver-noop.js",
               "node_modules/next/dist/server/after/revalidation-utils.js": "node_modules/next/dist/server/after/revalidation-utils.js",
-              "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
-              "node_modules/next/dist/shared/lib/router/utils/add-locale.js": "node_modules/next/dist/shared/lib/router/utils/add-locale.js",
               "node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js",
+              "node_modules/next/dist/shared/lib/router/utils/add-locale.js": "node_modules/next/dist/shared/lib/router/utils/add-locale.js",
+              "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
               "node_modules/next/dist/compiled/@edge-runtime/cookies/package.json": "node_modules/next/dist/compiled/@edge-runtime/cookies/package.json",
               "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js",
               "node_modules/next/dist/compiled/debug/index.js": "node_modules/next/dist/compiled/debug/index.js",
@@ -1034,10 +1004,10 @@
               "node_modules/next/dist/server/app-render/create-error-handler.js": "node_modules/next/dist/server/app-render/create-error-handler.js",
               "node_modules/next/dist/server/app-render/get-short-dynamic-param-type.js": "node_modules/next/dist/server/app-render/get-short-dynamic-param-type.js",
               "node_modules/next/dist/server/app-render/get-segment-param.js": "node_modules/next/dist/server/app-render/get-segment-param.js",
-              "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js": "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js",
               "node_modules/next/dist/server/app-render/get-script-nonce-from-header.js": "node_modules/next/dist/server/app-render/get-script-nonce-from-header.js",
-              "node_modules/next/dist/server/app-render/action-handler.js": "node_modules/next/dist/server/app-render/action-handler.js",
+              "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js": "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js",
               "node_modules/next/dist/server/app-render/create-flight-router-state-from-loader-tree.js": "node_modules/next/dist/server/app-render/create-flight-router-state-from-loader-tree.js",
+              "node_modules/next/dist/server/app-render/action-handler.js": "node_modules/next/dist/server/app-render/action-handler.js",
               "node_modules/next/dist/server/app-render/server-inserted-html.js": "node_modules/next/dist/server/app-render/server-inserted-html.js",
               "node_modules/next/dist/server/app-render/required-scripts.js": "node_modules/next/dist/server/app-render/required-scripts.js",
               "node_modules/next/dist/server/app-render/make-get-server-inserted-html.js": "node_modules/next/dist/server/app-render/make-get-server-inserted-html.js",
@@ -1062,13 +1032,13 @@
               "node_modules/next/dist/server/normalizers/normalizers.js": "node_modules/next/dist/server/normalizers/normalizers.js",
               "node_modules/next/dist/server/normalizers/prefixing-normalizer.js": "node_modules/next/dist/server/normalizers/prefixing-normalizer.js",
               "node_modules/next/dist/server/normalizers/absolute-filename-normalizer.js": "node_modules/next/dist/server/normalizers/absolute-filename-normalizer.js",
-              "node_modules/next/dist/server/normalizers/underscore-normalizer.js": "node_modules/next/dist/server/normalizers/underscore-normalizer.js",
               "node_modules/next/dist/server/normalizers/wrap-normalizer-fn.js": "node_modules/next/dist/server/normalizers/wrap-normalizer-fn.js",
+              "node_modules/next/dist/server/normalizers/underscore-normalizer.js": "node_modules/next/dist/server/normalizers/underscore-normalizer.js",
               "node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js": "node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js",
               "node_modules/next/dist/compiled/p-queue/package.json": "node_modules/next/dist/compiled/p-queue/package.json",
               "node_modules/next/dist/server/ReactDOMServerPages.js": "node_modules/next/dist/server/ReactDOMServerPages.js",
-              "node_modules/next/dist/server/optimize-amp.js": "node_modules/next/dist/server/optimize-amp.js",
               "node_modules/next/dist/lib/non-nullable.js": "node_modules/next/dist/lib/non-nullable.js",
+              "node_modules/next/dist/server/optimize-amp.js": "node_modules/next/dist/server/optimize-amp.js",
               "node_modules/next/dist/compiled/babel/code-frame.js": "node_modules/next/dist/compiled/babel/code-frame.js",
               "node_modules/next/dist/compiled/p-queue/index.js": "node_modules/next/dist/compiled/p-queue/index.js",
               "node_modules/next/dist/shared/lib/side-effect.js": "node_modules/next/dist/shared/lib/side-effect.js",
@@ -1088,17 +1058,17 @@
               "node_modules/next/dist/server/app-render/csrf-protection.js": "node_modules/next/dist/server/app-render/csrf-protection.js",
               "node_modules/next/dist/server/app-render/react-server.node.js": "node_modules/next/dist/server/app-render/react-server.node.js",
               "node_modules/next/dist/shared/lib/encode-uri-path.js": "node_modules/next/dist/shared/lib/encode-uri-path.js",
+              "node_modules/next/dist/client/components/match-segments.js": "node_modules/next/dist/client/components/match-segments.js",
+              "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js": "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js",
+              "node_modules/next/dist/server/app-render/get-preloadable-fonts.js": "node_modules/next/dist/server/app-render/get-preloadable-fonts.js",
+              "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js": "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js",
               "node_modules/next/dist/server/lib/app-dir-module.js": "node_modules/next/dist/server/lib/app-dir-module.js",
               "node_modules/next/dist/server/app-render/interop-default.js": "node_modules/next/dist/server/app-render/interop-default.js",
               "node_modules/next/dist/server/app-render/parse-loader-tree.js": "node_modules/next/dist/server/app-render/parse-loader-tree.js",
               "node_modules/next/dist/server/app-render/create-component-styles-and-scripts.js": "node_modules/next/dist/server/app-render/create-component-styles-and-scripts.js",
               "node_modules/next/dist/server/app-render/get-layer-assets.js": "node_modules/next/dist/server/app-render/get-layer-assets.js",
               "node_modules/next/dist/server/lib/patch-fetch.js": "node_modules/next/dist/server/lib/patch-fetch.js",
-              "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js": "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js",
               "node_modules/next/dist/client/components/parallel-route-default.js": "node_modules/next/dist/client/components/parallel-route-default.js",
-              "node_modules/next/dist/client/components/match-segments.js": "node_modules/next/dist/client/components/match-segments.js",
-              "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js": "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js",
-              "node_modules/next/dist/server/app-render/get-preloadable-fonts.js": "node_modules/next/dist/server/app-render/get-preloadable-fonts.js",
               "node_modules/next/dist/client/components/use-reducer.js": "node_modules/next/dist/client/components/use-reducer.js",
               "node_modules/next/dist/client/components/error-boundary.js": "node_modules/next/dist/client/components/error-boundary.js",
               "node_modules/next/dist/client/components/app-router-announcer.js": "node_modules/next/dist/client/components/app-router-announcer.js",
@@ -1116,9 +1086,9 @@
               "node_modules/next/dist/compiled/data-uri-to-buffer/package.json": "node_modules/next/dist/compiled/data-uri-to-buffer/package.json",
               "node_modules/next/dist/compiled/shell-quote/package.json": "node_modules/next/dist/compiled/shell-quote/package.json",
               "node_modules/next/dist/compiled/stacktrace-parser/package.json": "node_modules/next/dist/compiled/stacktrace-parser/package.json",
-              "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js": "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/find-head-in-cache.js": "node_modules/next/dist/client/components/router-reducer/reducers/find-head-in-cache.js",
               "node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js": "node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js",
+              "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js": "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
               "node_modules/next/dist/client/components/router-reducer/fill-lazy-items-till-leaf-with-head.js": "node_modules/next/dist/client/components/router-reducer/fill-lazy-items-till-leaf-with-head.js",
               "node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js": "node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js",
               "node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js": "node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js",
@@ -1149,18 +1119,18 @@
               "node_modules/next/dist/client/components/router-reducer/create-router-cache-key.js": "node_modules/next/dist/client/components/router-reducer/create-router-cache-key.js",
               "node_modules/next/dist/client/components/react-dev-overlay/shared.js": "node_modules/next/dist/client/components/react-dev-overlay/shared.js",
               "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
-              "node_modules/next/dist/lib/metadata/get-metadata-route.js": "node_modules/next/dist/lib/metadata/get-metadata-route.js",
               "node_modules/next/dist/client/components/router-reducer/apply-flight-data.js": "node_modules/next/dist/client/components/router-reducer/apply-flight-data.js",
-              "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js",
-              "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js",
+              "node_modules/next/dist/lib/metadata/get-metadata-route.js": "node_modules/next/dist/lib/metadata/get-metadata-route.js",
               "node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js": "node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js",
+              "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/server-patch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/server-patch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/refresh-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/refresh-reducer.js",
-              "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/hmr-refresh-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/hmr-refresh-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js",
+              "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js",
+              "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js",
               "node_modules/next/dist/shared/lib/page-path/remove-page-path-tail.js": "node_modules/next/dist/shared/lib/page-path/remove-page-path-tail.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/format-webpack-messages.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/format-webpack-messages.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js",
@@ -1208,15 +1178,15 @@
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/get-socket-url.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/get-socket-url.js",
               "node_modules/next/dist/compiled/babel-packages/package.json": "node_modules/next/dist/compiled/babel-packages/package.json",
               "node_modules/next/dist/compiled/browserslist/package.json": "node_modules/next/dist/compiled/browserslist/package.json",
-              "node_modules/next/dist/compiled/json5/package.json": "node_modules/next/dist/compiled/json5/package.json",
               "node_modules/next/dist/compiled/lru-cache/package.json": "node_modules/next/dist/compiled/lru-cache/package.json",
+              "node_modules/next/dist/compiled/json5/package.json": "node_modules/next/dist/compiled/json5/package.json",
               "node_modules/next/dist/compiled/semver/package.json": "node_modules/next/dist/compiled/semver/package.json",
               "node_modules/next/dist/client/components/unstable-rethrow.js": "node_modules/next/dist/client/components/unstable-rethrow.js",
               "node_modules/scheduler/index.js": "node_modules/scheduler/index.js",
               "node_modules/next/dist/compiled/babel-packages/packages-bundle.js": "node_modules/next/dist/compiled/babel-packages/packages-bundle.js",
               "node_modules/next/dist/compiled/browserslist/index.js": "node_modules/next/dist/compiled/browserslist/index.js",
-              "node_modules/next/dist/compiled/json5/index.js": "node_modules/next/dist/compiled/json5/index.js",
               "node_modules/next/dist/compiled/lru-cache/index.js": "node_modules/next/dist/compiled/lru-cache/index.js",
+              "node_modules/next/dist/compiled/json5/index.js": "node_modules/next/dist/compiled/json5/index.js",
               "node_modules/next/dist/compiled/semver/index.js": "node_modules/next/dist/compiled/semver/index.js",
               "node_modules/streamsearch/package.json": "node_modules/streamsearch/package.json",
               "node_modules/next/dist/client/components/router-reducer/invalidate-cache-by-router-state.js": "node_modules/next/dist/client/components/router-reducer/invalidate-cache-by-router-state.js",
@@ -1268,22 +1238,22 @@
               "node_modules/caniuse-lite/dist/unpacker/browserVersions.js": "node_modules/caniuse-lite/dist/unpacker/browserVersions.js",
               "node_modules/caniuse-lite/dist/lib/statuses.js": "node_modules/caniuse-lite/dist/lib/statuses.js",
               "node_modules/caniuse-lite/dist/lib/supported.js": "node_modules/caniuse-lite/dist/lib/supported.js",
+              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogBody.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogBody.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogContent.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogContent.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/styles.js",
-              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/Overlay.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/Overlay.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Terminal/Terminal.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Terminal/Terminal.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/styles.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/VersionStalenessInfo.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/VersionStalenessInfo.js",
+              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/styles.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/Toast.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/Toast.js",
-              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/container/RuntimeError/GroupedStackFrames.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/container/RuntimeError/GroupedStackFrames.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/CodeFrame/index.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/CodeFrame/index.js",
-              "node_modules/caniuse-lite/data/browsers.js": "node_modules/caniuse-lite/data/browsers.js",
               "node_modules/caniuse-lite/data/browserVersions.js": "node_modules/caniuse-lite/data/browserVersions.js",
+              "node_modules/caniuse-lite/data/browsers.js": "node_modules/caniuse-lite/data/browsers.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/hooks/use-on-click-outside.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/hooks/use-on-click-outside.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/icons/FrameworkIcon.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/icons/FrameworkIcon.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/maintain--tab-focus.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/maintain--tab-focus.js",
@@ -1366,32 +1336,6 @@
       ],
       "ignored": [
         {
-          "reason": "unnecessary rsc function",
-          "relativePath": "/api/remove-bg.rsc.func",
-          "config": {
-            "runtime": "edge",
-            "name": "api/remove-bg",
-            "deploymentTarget": "v8-worker",
-            "entrypoint": "index.js",
-            "assets": [],
-            "framework": {
-              "slug": "nextjs",
-              "version": "15.0.0"
-            },
-            "environment": {
-              "__NEXT_BUILD_ID": "YwC1fWq8_q6gNhfyOpioA",
-              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "eMo2PwOYJC9tlBwwTsjyA8jO+Q1OZN67BWNOQgJwztY=",
-              "__NEXT_PREVIEW_MODE_ID": "f7668d71a4b9d0c10f1748842c238bfb",
-              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "be35d819a6140c79d45e52ff0ae8e08638c7d4cfbbaa3f0ae374b8c48412dea6",
-              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "49aae3a53aa1902b238b54f5f62309d6a40e3908563df9cbfa8d273e0bb676c0"
-            }
-          },
-          "route": {
-            "path": "/api/remove-bg.rsc",
-            "overrides": []
-          }
-        },
-        {
           "reason": "invalid unnecessary not-found function",
           "relativePath": "/_not-found.func",
           "config": {
@@ -1469,8 +1413,8 @@
               "node_modules/next/dist/shared/lib/router/utils/route-regex.js": "node_modules/next/dist/shared/lib/router/utils/route-regex.js",
               "node_modules/next/dist/server/web/spec-extension/adapters/next-request.js": "node_modules/next/dist/server/web/spec-extension/adapters/next-request.js",
               "node_modules/next/dist/compiled/next-server/pages.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages.runtime.prod.js",
-              "node_modules/next/dist/server/app-render/action-async-storage.external.js": "node_modules/next/dist/server/app-render/action-async-storage.external.js",
               "node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+              "node_modules/next/dist/server/app-render/action-async-storage.external.js": "node_modules/next/dist/server/app-render/action-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-async-storage.external.js": "node_modules/next/dist/server/app-render/work-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js": "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
               "node_modules/react/jsx-runtime.js": "node_modules/react/jsx-runtime.js",
@@ -1478,14 +1422,14 @@
               "node_modules/next/dist/server/response-cache/index.js": "node_modules/next/dist/server/response-cache/index.js",
               "node_modules/next/dist/server/lib/incremental-cache/index.js": "node_modules/next/dist/server/lib/incremental-cache/index.js",
               "node_modules/next/dist/server/web/sandbox/index.js": "node_modules/next/dist/server/web/sandbox/index.js",
-              "node_modules/next/dist/lib/wait.js": "node_modules/next/dist/lib/wait.js",
               "node_modules/next/dist/server/node-environment-baseline.js": "node_modules/next/dist/server/node-environment-baseline.js",
+              "node_modules/next/dist/lib/wait.js": "node_modules/next/dist/lib/wait.js",
               "node_modules/next/dist/lib/detached-promise.js": "node_modules/next/dist/lib/detached-promise.js",
               "node_modules/next/dist/server/client-component-renderer-logger.js": "node_modules/next/dist/server/client-component-renderer-logger.js",
               "node_modules/@next/env/package.json": "node_modules/@next/env/package.json",
-              "node_modules/next/dist/server/node-environment-extensions/random.js": "node_modules/next/dist/server/node-environment-extensions/random.js",
               "node_modules/next/dist/server/node-environment-extensions/date.js": "node_modules/next/dist/server/node-environment-extensions/date.js",
               "node_modules/next/dist/server/node-environment-extensions/web-crypto.js": "node_modules/next/dist/server/node-environment-extensions/web-crypto.js",
+              "node_modules/next/dist/server/node-environment-extensions/random.js": "node_modules/next/dist/server/node-environment-extensions/random.js",
               "node_modules/next/dist/server/node-environment-extensions/node-crypto.js": "node_modules/next/dist/server/node-environment-extensions/node-crypto.js",
               "node_modules/next/dist/server/lib/etag.js": "node_modules/next/dist/server/lib/etag.js",
               "node_modules/next/dist/server/lib/revalidate.js": "node_modules/next/dist/server/lib/revalidate.js",
@@ -1507,8 +1451,8 @@
               "node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js": "node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js",
               "node_modules/@next/env/dist/index.js": "node_modules/@next/env/dist/index.js",
               "node_modules/next/dist/server/lib/module-loader/node-module-loader.js": "node_modules/next/dist/server/lib/module-loader/node-module-loader.js",
-              "node_modules/next/dist/server/route-modules/pages/module.compiled.js": "node_modules/next/dist/server/route-modules/pages/module.compiled.js",
               "node_modules/next/dist/server/route-modules/app-page/module.compiled.js": "node_modules/next/dist/server/route-modules/app-page/module.compiled.js",
+              "node_modules/next/dist/server/route-modules/pages/module.compiled.js": "node_modules/next/dist/server/route-modules/pages/module.compiled.js",
               "node_modules/next/dist/shared/lib/segment.js": "node_modules/next/dist/shared/lib/segment.js",
               "node_modules/next/dist/shared/lib/escape-regexp.js": "node_modules/next/dist/shared/lib/escape-regexp.js",
               "node_modules/next/dist/server/base-http/helpers.js": "node_modules/next/dist/server/base-http/helpers.js",
@@ -1533,9 +1477,9 @@
               "node_modules/next/dist/server/web/sandbox/sandbox.js": "node_modules/next/dist/server/web/sandbox/sandbox.js",
               "node_modules/next/dist/server/web/sandbox/context.js": "node_modules/next/dist/server/web/sandbox/context.js",
               "node_modules/next/dist/lib/redirect-status.js": "node_modules/next/dist/lib/redirect-status.js",
+              "node_modules/next/dist/lib/is-edge-runtime.js": "node_modules/next/dist/lib/is-edge-runtime.js",
               "node_modules/next/dist/server/utils.js": "node_modules/next/dist/server/utils.js",
               "node_modules/next/dist/server/render-result.js": "node_modules/next/dist/server/render-result.js",
-              "node_modules/next/dist/lib/is-edge-runtime.js": "node_modules/next/dist/lib/is-edge-runtime.js",
               "node_modules/next/dist/server/server-utils.js": "node_modules/next/dist/server/server-utils.js",
               "node_modules/next/dist/server/send-response.js": "node_modules/next/dist/server/send-response.js",
               "node_modules/next/dist/lib/fallback.js": "node_modules/next/dist/lib/fallback.js",
@@ -1561,8 +1505,8 @@
               "node_modules/next/dist/server/web/adapter.js": "node_modules/next/dist/server/web/adapter.js",
               "node_modules/next/dist/server/instrumentation/utils.js": "node_modules/next/dist/server/instrumentation/utils.js",
               "node_modules/next/dist/server/lib/prefetch-cache-scopes.js": "node_modules/next/dist/server/lib/prefetch-cache-scopes.js",
-              "node_modules/next/dist/server/normalizers/request/postponed.js": "node_modules/next/dist/server/normalizers/request/postponed.js",
               "node_modules/next/dist/server/normalizers/request/rsc.js": "node_modules/next/dist/server/normalizers/request/rsc.js",
+              "node_modules/next/dist/server/normalizers/request/postponed.js": "node_modules/next/dist/server/normalizers/request/postponed.js",
               "node_modules/next/dist/server/normalizers/request/prefetch-rsc.js": "node_modules/next/dist/server/normalizers/request/prefetch-rsc.js",
               "node_modules/next/dist/server/normalizers/request/next-data.js": "node_modules/next/dist/server/normalizers/request/next-data.js",
               "node_modules/next/dist/server/lib/experimental/ppr.js": "node_modules/next/dist/server/lib/experimental/ppr.js",
@@ -1610,11 +1554,11 @@
               "node_modules/next/dist/server/web/sandbox/resource-managers.js": "node_modules/next/dist/server/web/sandbox/resource-managers.js",
               "node_modules/next/dist/server/lib/is-ipv6.js": "node_modules/next/dist/server/lib/is-ipv6.js",
               "node_modules/next/dist/server/route-matchers/locale-route-matcher.js": "node_modules/next/dist/server/route-matchers/locale-route-matcher.js",
-              "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js": "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js",
               "node_modules/next/dist/server/route-matchers/app-page-route-matcher.js": "node_modules/next/dist/server/route-matchers/app-page-route-matcher.js",
+              "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js": "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js",
               "node_modules/next/dist/server/route-matchers/app-route-route-matcher.js": "node_modules/next/dist/server/route-matchers/app-route-route-matcher.js",
-              "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js",
               "node_modules/next/dist/server/route-matchers/pages-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-route-matcher.js",
+              "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js",
               "node_modules/next/dist/server/web/globals.js": "node_modules/next/dist/server/web/globals.js",
               "node_modules/next/dist/server/async-storage/request-store.js": "node_modules/next/dist/server/async-storage/request-store.js",
               "node_modules/next/dist/server/async-storage/with-work-store.js": "node_modules/next/dist/server/async-storage/with-work-store.js",
@@ -1640,15 +1584,15 @@
               "node_modules/next/dist/shared/lib/router/utils/is-dynamic.js": "node_modules/next/dist/shared/lib/router/utils/is-dynamic.js",
               "node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js": "node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js",
               "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js": "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js",
-              "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-turbo-experimental.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-turbo-experimental.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js",
+              "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js",
               "node_modules/next/dist/compiled/ws/index.js": "node_modules/next/dist/compiled/ws/index.js",
               "node_modules/next/dist/server/normalizers/built/app/index.js": "node_modules/next/dist/server/normalizers/built/app/index.js",
               "node_modules/next/dist/server/normalizers/built/pages/index.js": "node_modules/next/dist/server/normalizers/built/pages/index.js",
-              "node_modules/next/dist/server/route-modules/pages/module.js": "node_modules/next/dist/server/route-modules/pages/module.js",
               "node_modules/next/dist/server/route-modules/app-page/module.js": "node_modules/next/dist/server/route-modules/app-page/module.js",
+              "node_modules/next/dist/server/route-modules/pages/module.js": "node_modules/next/dist/server/route-modules/pages/module.js",
               "node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js": "node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js",
               "node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js": "node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js",
               "node_modules/next/dist/server/app-render/clean-async-snapshot-instance.js": "node_modules/next/dist/server/app-render/clean-async-snapshot-instance.js",
@@ -1672,26 +1616,26 @@
               "node_modules/next/dist/compiled/edge-runtime/index.js": "node_modules/next/dist/compiled/edge-runtime/index.js",
               "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json",
               "node_modules/next/dist/server/render.js": "node_modules/next/dist/server/render.js",
-              "node_modules/next/dist/server/route-modules/route-module.js": "node_modules/next/dist/server/route-modules/route-module.js",
               "node_modules/next/dist/server/app-render/app-render.js": "node_modules/next/dist/server/app-render/app-render.js",
+              "node_modules/next/dist/server/route-modules/route-module.js": "node_modules/next/dist/server/route-modules/route-module.js",
               "node_modules/next/dist/compiled/debug/package.json": "node_modules/next/dist/compiled/debug/package.json",
               "node_modules/next/dist/server/normalizers/built/app/app-bundle-path-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-bundle-path-normalizer.js",
+              "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/app/app-page-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-page-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/app/app-pathname-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-pathname-normalizer.js",
-              "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-bundle-path-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-bundle-path-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-page-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-page-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-pathname-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-pathname-normalizer.js",
-              "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/rsc/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/rsc/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/ssr/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/ssr/entrypoints.js",
+              "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/lib/semver-noop.js": "node_modules/next/dist/lib/semver-noop.js",
               "node_modules/next/dist/server/after/revalidation-utils.js": "node_modules/next/dist/server/after/revalidation-utils.js",
-              "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
-              "node_modules/next/dist/shared/lib/router/utils/add-locale.js": "node_modules/next/dist/shared/lib/router/utils/add-locale.js",
               "node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js",
+              "node_modules/next/dist/shared/lib/router/utils/add-locale.js": "node_modules/next/dist/shared/lib/router/utils/add-locale.js",
+              "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
               "node_modules/next/dist/compiled/@edge-runtime/cookies/package.json": "node_modules/next/dist/compiled/@edge-runtime/cookies/package.json",
               "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js",
               "node_modules/next/dist/compiled/debug/index.js": "node_modules/next/dist/compiled/debug/index.js",
@@ -1723,10 +1667,10 @@
               "node_modules/next/dist/server/app-render/create-error-handler.js": "node_modules/next/dist/server/app-render/create-error-handler.js",
               "node_modules/next/dist/server/app-render/get-short-dynamic-param-type.js": "node_modules/next/dist/server/app-render/get-short-dynamic-param-type.js",
               "node_modules/next/dist/server/app-render/get-segment-param.js": "node_modules/next/dist/server/app-render/get-segment-param.js",
-              "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js": "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js",
               "node_modules/next/dist/server/app-render/get-script-nonce-from-header.js": "node_modules/next/dist/server/app-render/get-script-nonce-from-header.js",
-              "node_modules/next/dist/server/app-render/action-handler.js": "node_modules/next/dist/server/app-render/action-handler.js",
+              "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js": "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js",
               "node_modules/next/dist/server/app-render/create-flight-router-state-from-loader-tree.js": "node_modules/next/dist/server/app-render/create-flight-router-state-from-loader-tree.js",
+              "node_modules/next/dist/server/app-render/action-handler.js": "node_modules/next/dist/server/app-render/action-handler.js",
               "node_modules/next/dist/server/app-render/server-inserted-html.js": "node_modules/next/dist/server/app-render/server-inserted-html.js",
               "node_modules/next/dist/server/app-render/required-scripts.js": "node_modules/next/dist/server/app-render/required-scripts.js",
               "node_modules/next/dist/server/app-render/make-get-server-inserted-html.js": "node_modules/next/dist/server/app-render/make-get-server-inserted-html.js",
@@ -1751,13 +1695,13 @@
               "node_modules/next/dist/server/normalizers/normalizers.js": "node_modules/next/dist/server/normalizers/normalizers.js",
               "node_modules/next/dist/server/normalizers/prefixing-normalizer.js": "node_modules/next/dist/server/normalizers/prefixing-normalizer.js",
               "node_modules/next/dist/server/normalizers/absolute-filename-normalizer.js": "node_modules/next/dist/server/normalizers/absolute-filename-normalizer.js",
-              "node_modules/next/dist/server/normalizers/underscore-normalizer.js": "node_modules/next/dist/server/normalizers/underscore-normalizer.js",
               "node_modules/next/dist/server/normalizers/wrap-normalizer-fn.js": "node_modules/next/dist/server/normalizers/wrap-normalizer-fn.js",
+              "node_modules/next/dist/server/normalizers/underscore-normalizer.js": "node_modules/next/dist/server/normalizers/underscore-normalizer.js",
               "node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js": "node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js",
               "node_modules/next/dist/compiled/p-queue/package.json": "node_modules/next/dist/compiled/p-queue/package.json",
               "node_modules/next/dist/server/ReactDOMServerPages.js": "node_modules/next/dist/server/ReactDOMServerPages.js",
-              "node_modules/next/dist/server/optimize-amp.js": "node_modules/next/dist/server/optimize-amp.js",
               "node_modules/next/dist/lib/non-nullable.js": "node_modules/next/dist/lib/non-nullable.js",
+              "node_modules/next/dist/server/optimize-amp.js": "node_modules/next/dist/server/optimize-amp.js",
               "node_modules/next/dist/compiled/babel/code-frame.js": "node_modules/next/dist/compiled/babel/code-frame.js",
               "node_modules/next/dist/compiled/p-queue/index.js": "node_modules/next/dist/compiled/p-queue/index.js",
               "node_modules/next/dist/shared/lib/side-effect.js": "node_modules/next/dist/shared/lib/side-effect.js",
@@ -1777,17 +1721,17 @@
               "node_modules/next/dist/server/app-render/csrf-protection.js": "node_modules/next/dist/server/app-render/csrf-protection.js",
               "node_modules/next/dist/server/app-render/react-server.node.js": "node_modules/next/dist/server/app-render/react-server.node.js",
               "node_modules/next/dist/shared/lib/encode-uri-path.js": "node_modules/next/dist/shared/lib/encode-uri-path.js",
+              "node_modules/next/dist/client/components/match-segments.js": "node_modules/next/dist/client/components/match-segments.js",
+              "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js": "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js",
+              "node_modules/next/dist/server/app-render/get-preloadable-fonts.js": "node_modules/next/dist/server/app-render/get-preloadable-fonts.js",
+              "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js": "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js",
               "node_modules/next/dist/server/lib/app-dir-module.js": "node_modules/next/dist/server/lib/app-dir-module.js",
               "node_modules/next/dist/server/app-render/interop-default.js": "node_modules/next/dist/server/app-render/interop-default.js",
               "node_modules/next/dist/server/app-render/parse-loader-tree.js": "node_modules/next/dist/server/app-render/parse-loader-tree.js",
               "node_modules/next/dist/server/app-render/create-component-styles-and-scripts.js": "node_modules/next/dist/server/app-render/create-component-styles-and-scripts.js",
               "node_modules/next/dist/server/app-render/get-layer-assets.js": "node_modules/next/dist/server/app-render/get-layer-assets.js",
               "node_modules/next/dist/server/lib/patch-fetch.js": "node_modules/next/dist/server/lib/patch-fetch.js",
-              "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js": "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js",
               "node_modules/next/dist/client/components/parallel-route-default.js": "node_modules/next/dist/client/components/parallel-route-default.js",
-              "node_modules/next/dist/client/components/match-segments.js": "node_modules/next/dist/client/components/match-segments.js",
-              "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js": "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js",
-              "node_modules/next/dist/server/app-render/get-preloadable-fonts.js": "node_modules/next/dist/server/app-render/get-preloadable-fonts.js",
               "node_modules/next/dist/client/components/use-reducer.js": "node_modules/next/dist/client/components/use-reducer.js",
               "node_modules/next/dist/client/components/error-boundary.js": "node_modules/next/dist/client/components/error-boundary.js",
               "node_modules/next/dist/client/components/app-router-announcer.js": "node_modules/next/dist/client/components/app-router-announcer.js",
@@ -1805,9 +1749,9 @@
               "node_modules/next/dist/compiled/data-uri-to-buffer/package.json": "node_modules/next/dist/compiled/data-uri-to-buffer/package.json",
               "node_modules/next/dist/compiled/shell-quote/package.json": "node_modules/next/dist/compiled/shell-quote/package.json",
               "node_modules/next/dist/compiled/stacktrace-parser/package.json": "node_modules/next/dist/compiled/stacktrace-parser/package.json",
-              "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js": "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/find-head-in-cache.js": "node_modules/next/dist/client/components/router-reducer/reducers/find-head-in-cache.js",
               "node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js": "node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js",
+              "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js": "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
               "node_modules/next/dist/client/components/router-reducer/fill-lazy-items-till-leaf-with-head.js": "node_modules/next/dist/client/components/router-reducer/fill-lazy-items-till-leaf-with-head.js",
               "node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js": "node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js",
               "node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js": "node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js",
@@ -1838,18 +1782,18 @@
               "node_modules/next/dist/client/components/router-reducer/create-router-cache-key.js": "node_modules/next/dist/client/components/router-reducer/create-router-cache-key.js",
               "node_modules/next/dist/client/components/react-dev-overlay/shared.js": "node_modules/next/dist/client/components/react-dev-overlay/shared.js",
               "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
-              "node_modules/next/dist/lib/metadata/get-metadata-route.js": "node_modules/next/dist/lib/metadata/get-metadata-route.js",
               "node_modules/next/dist/client/components/router-reducer/apply-flight-data.js": "node_modules/next/dist/client/components/router-reducer/apply-flight-data.js",
-              "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js",
-              "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js",
+              "node_modules/next/dist/lib/metadata/get-metadata-route.js": "node_modules/next/dist/lib/metadata/get-metadata-route.js",
               "node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js": "node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js",
+              "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/server-patch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/server-patch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/refresh-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/refresh-reducer.js",
-              "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/hmr-refresh-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/hmr-refresh-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js",
+              "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js",
+              "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js",
               "node_modules/next/dist/shared/lib/page-path/remove-page-path-tail.js": "node_modules/next/dist/shared/lib/page-path/remove-page-path-tail.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/format-webpack-messages.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/format-webpack-messages.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js",
@@ -1897,15 +1841,15 @@
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/get-socket-url.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/get-socket-url.js",
               "node_modules/next/dist/compiled/babel-packages/package.json": "node_modules/next/dist/compiled/babel-packages/package.json",
               "node_modules/next/dist/compiled/browserslist/package.json": "node_modules/next/dist/compiled/browserslist/package.json",
-              "node_modules/next/dist/compiled/json5/package.json": "node_modules/next/dist/compiled/json5/package.json",
               "node_modules/next/dist/compiled/lru-cache/package.json": "node_modules/next/dist/compiled/lru-cache/package.json",
+              "node_modules/next/dist/compiled/json5/package.json": "node_modules/next/dist/compiled/json5/package.json",
               "node_modules/next/dist/compiled/semver/package.json": "node_modules/next/dist/compiled/semver/package.json",
               "node_modules/next/dist/client/components/unstable-rethrow.js": "node_modules/next/dist/client/components/unstable-rethrow.js",
               "node_modules/scheduler/index.js": "node_modules/scheduler/index.js",
               "node_modules/next/dist/compiled/babel-packages/packages-bundle.js": "node_modules/next/dist/compiled/babel-packages/packages-bundle.js",
               "node_modules/next/dist/compiled/browserslist/index.js": "node_modules/next/dist/compiled/browserslist/index.js",
-              "node_modules/next/dist/compiled/json5/index.js": "node_modules/next/dist/compiled/json5/index.js",
               "node_modules/next/dist/compiled/lru-cache/index.js": "node_modules/next/dist/compiled/lru-cache/index.js",
+              "node_modules/next/dist/compiled/json5/index.js": "node_modules/next/dist/compiled/json5/index.js",
               "node_modules/next/dist/compiled/semver/index.js": "node_modules/next/dist/compiled/semver/index.js",
               "node_modules/streamsearch/package.json": "node_modules/streamsearch/package.json",
               "node_modules/next/dist/client/components/router-reducer/invalidate-cache-by-router-state.js": "node_modules/next/dist/client/components/router-reducer/invalidate-cache-by-router-state.js",
@@ -1957,22 +1901,22 @@
               "node_modules/caniuse-lite/dist/unpacker/browserVersions.js": "node_modules/caniuse-lite/dist/unpacker/browserVersions.js",
               "node_modules/caniuse-lite/dist/lib/statuses.js": "node_modules/caniuse-lite/dist/lib/statuses.js",
               "node_modules/caniuse-lite/dist/lib/supported.js": "node_modules/caniuse-lite/dist/lib/supported.js",
+              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogBody.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogBody.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogContent.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogContent.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/styles.js",
-              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/Overlay.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/Overlay.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Terminal/Terminal.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Terminal/Terminal.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/styles.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/VersionStalenessInfo.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/VersionStalenessInfo.js",
+              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/styles.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/Toast.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/Toast.js",
-              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/container/RuntimeError/GroupedStackFrames.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/container/RuntimeError/GroupedStackFrames.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/CodeFrame/index.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/CodeFrame/index.js",
-              "node_modules/caniuse-lite/data/browsers.js": "node_modules/caniuse-lite/data/browsers.js",
               "node_modules/caniuse-lite/data/browserVersions.js": "node_modules/caniuse-lite/data/browserVersions.js",
+              "node_modules/caniuse-lite/data/browsers.js": "node_modules/caniuse-lite/data/browsers.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/hooks/use-on-click-outside.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/hooks/use-on-click-outside.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/icons/FrameworkIcon.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/icons/FrameworkIcon.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/maintain--tab-focus.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/maintain--tab-focus.js",
@@ -2117,8 +2061,8 @@
               "node_modules/next/dist/shared/lib/router/utils/route-regex.js": "node_modules/next/dist/shared/lib/router/utils/route-regex.js",
               "node_modules/next/dist/server/web/spec-extension/adapters/next-request.js": "node_modules/next/dist/server/web/spec-extension/adapters/next-request.js",
               "node_modules/next/dist/compiled/next-server/pages.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages.runtime.prod.js",
-              "node_modules/next/dist/server/app-render/action-async-storage.external.js": "node_modules/next/dist/server/app-render/action-async-storage.external.js",
               "node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+              "node_modules/next/dist/server/app-render/action-async-storage.external.js": "node_modules/next/dist/server/app-render/action-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-async-storage.external.js": "node_modules/next/dist/server/app-render/work-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js": "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
               "node_modules/react/jsx-runtime.js": "node_modules/react/jsx-runtime.js",
@@ -2126,14 +2070,14 @@
               "node_modules/next/dist/server/response-cache/index.js": "node_modules/next/dist/server/response-cache/index.js",
               "node_modules/next/dist/server/lib/incremental-cache/index.js": "node_modules/next/dist/server/lib/incremental-cache/index.js",
               "node_modules/next/dist/server/web/sandbox/index.js": "node_modules/next/dist/server/web/sandbox/index.js",
-              "node_modules/next/dist/lib/wait.js": "node_modules/next/dist/lib/wait.js",
               "node_modules/next/dist/server/node-environment-baseline.js": "node_modules/next/dist/server/node-environment-baseline.js",
+              "node_modules/next/dist/lib/wait.js": "node_modules/next/dist/lib/wait.js",
               "node_modules/next/dist/lib/detached-promise.js": "node_modules/next/dist/lib/detached-promise.js",
               "node_modules/next/dist/server/client-component-renderer-logger.js": "node_modules/next/dist/server/client-component-renderer-logger.js",
               "node_modules/@next/env/package.json": "node_modules/@next/env/package.json",
-              "node_modules/next/dist/server/node-environment-extensions/random.js": "node_modules/next/dist/server/node-environment-extensions/random.js",
               "node_modules/next/dist/server/node-environment-extensions/date.js": "node_modules/next/dist/server/node-environment-extensions/date.js",
               "node_modules/next/dist/server/node-environment-extensions/web-crypto.js": "node_modules/next/dist/server/node-environment-extensions/web-crypto.js",
+              "node_modules/next/dist/server/node-environment-extensions/random.js": "node_modules/next/dist/server/node-environment-extensions/random.js",
               "node_modules/next/dist/server/node-environment-extensions/node-crypto.js": "node_modules/next/dist/server/node-environment-extensions/node-crypto.js",
               "node_modules/next/dist/server/lib/etag.js": "node_modules/next/dist/server/lib/etag.js",
               "node_modules/next/dist/server/lib/revalidate.js": "node_modules/next/dist/server/lib/revalidate.js",
@@ -2155,8 +2099,8 @@
               "node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js": "node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js",
               "node_modules/@next/env/dist/index.js": "node_modules/@next/env/dist/index.js",
               "node_modules/next/dist/server/lib/module-loader/node-module-loader.js": "node_modules/next/dist/server/lib/module-loader/node-module-loader.js",
-              "node_modules/next/dist/server/route-modules/pages/module.compiled.js": "node_modules/next/dist/server/route-modules/pages/module.compiled.js",
               "node_modules/next/dist/server/route-modules/app-page/module.compiled.js": "node_modules/next/dist/server/route-modules/app-page/module.compiled.js",
+              "node_modules/next/dist/server/route-modules/pages/module.compiled.js": "node_modules/next/dist/server/route-modules/pages/module.compiled.js",
               "node_modules/next/dist/shared/lib/segment.js": "node_modules/next/dist/shared/lib/segment.js",
               "node_modules/next/dist/shared/lib/escape-regexp.js": "node_modules/next/dist/shared/lib/escape-regexp.js",
               "node_modules/next/dist/server/base-http/helpers.js": "node_modules/next/dist/server/base-http/helpers.js",
@@ -2181,9 +2125,9 @@
               "node_modules/next/dist/server/web/sandbox/sandbox.js": "node_modules/next/dist/server/web/sandbox/sandbox.js",
               "node_modules/next/dist/server/web/sandbox/context.js": "node_modules/next/dist/server/web/sandbox/context.js",
               "node_modules/next/dist/lib/redirect-status.js": "node_modules/next/dist/lib/redirect-status.js",
+              "node_modules/next/dist/lib/is-edge-runtime.js": "node_modules/next/dist/lib/is-edge-runtime.js",
               "node_modules/next/dist/server/utils.js": "node_modules/next/dist/server/utils.js",
               "node_modules/next/dist/server/render-result.js": "node_modules/next/dist/server/render-result.js",
-              "node_modules/next/dist/lib/is-edge-runtime.js": "node_modules/next/dist/lib/is-edge-runtime.js",
               "node_modules/next/dist/server/server-utils.js": "node_modules/next/dist/server/server-utils.js",
               "node_modules/next/dist/server/send-response.js": "node_modules/next/dist/server/send-response.js",
               "node_modules/next/dist/lib/fallback.js": "node_modules/next/dist/lib/fallback.js",
@@ -2209,8 +2153,8 @@
               "node_modules/next/dist/server/web/adapter.js": "node_modules/next/dist/server/web/adapter.js",
               "node_modules/next/dist/server/instrumentation/utils.js": "node_modules/next/dist/server/instrumentation/utils.js",
               "node_modules/next/dist/server/lib/prefetch-cache-scopes.js": "node_modules/next/dist/server/lib/prefetch-cache-scopes.js",
-              "node_modules/next/dist/server/normalizers/request/postponed.js": "node_modules/next/dist/server/normalizers/request/postponed.js",
               "node_modules/next/dist/server/normalizers/request/rsc.js": "node_modules/next/dist/server/normalizers/request/rsc.js",
+              "node_modules/next/dist/server/normalizers/request/postponed.js": "node_modules/next/dist/server/normalizers/request/postponed.js",
               "node_modules/next/dist/server/normalizers/request/prefetch-rsc.js": "node_modules/next/dist/server/normalizers/request/prefetch-rsc.js",
               "node_modules/next/dist/server/normalizers/request/next-data.js": "node_modules/next/dist/server/normalizers/request/next-data.js",
               "node_modules/next/dist/server/lib/experimental/ppr.js": "node_modules/next/dist/server/lib/experimental/ppr.js",
@@ -2258,11 +2202,11 @@
               "node_modules/next/dist/server/web/sandbox/resource-managers.js": "node_modules/next/dist/server/web/sandbox/resource-managers.js",
               "node_modules/next/dist/server/lib/is-ipv6.js": "node_modules/next/dist/server/lib/is-ipv6.js",
               "node_modules/next/dist/server/route-matchers/locale-route-matcher.js": "node_modules/next/dist/server/route-matchers/locale-route-matcher.js",
-              "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js": "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js",
               "node_modules/next/dist/server/route-matchers/app-page-route-matcher.js": "node_modules/next/dist/server/route-matchers/app-page-route-matcher.js",
+              "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js": "node_modules/next/dist/server/route-matcher-providers/manifest-route-matcher-provider.js",
               "node_modules/next/dist/server/route-matchers/app-route-route-matcher.js": "node_modules/next/dist/server/route-matchers/app-route-route-matcher.js",
-              "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js",
               "node_modules/next/dist/server/route-matchers/pages-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-route-matcher.js",
+              "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js": "node_modules/next/dist/server/route-matchers/pages-api-route-matcher.js",
               "node_modules/next/dist/server/web/globals.js": "node_modules/next/dist/server/web/globals.js",
               "node_modules/next/dist/server/async-storage/request-store.js": "node_modules/next/dist/server/async-storage/request-store.js",
               "node_modules/next/dist/server/async-storage/with-work-store.js": "node_modules/next/dist/server/async-storage/with-work-store.js",
@@ -2288,15 +2232,15 @@
               "node_modules/next/dist/shared/lib/router/utils/is-dynamic.js": "node_modules/next/dist/shared/lib/router/utils/is-dynamic.js",
               "node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js": "node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js",
               "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js": "node_modules/react-dom/cjs/react-dom-server.browser.production.min.js",
-              "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-turbo-experimental.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-turbo-experimental.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-experimental.runtime.prod.js",
               "node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js",
+              "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js": "node_modules/next/dist/compiled/next-server/pages-turbo.runtime.prod.js",
               "node_modules/next/dist/compiled/ws/index.js": "node_modules/next/dist/compiled/ws/index.js",
               "node_modules/next/dist/server/normalizers/built/app/index.js": "node_modules/next/dist/server/normalizers/built/app/index.js",
               "node_modules/next/dist/server/normalizers/built/pages/index.js": "node_modules/next/dist/server/normalizers/built/pages/index.js",
-              "node_modules/next/dist/server/route-modules/pages/module.js": "node_modules/next/dist/server/route-modules/pages/module.js",
               "node_modules/next/dist/server/route-modules/app-page/module.js": "node_modules/next/dist/server/route-modules/app-page/module.js",
+              "node_modules/next/dist/server/route-modules/pages/module.js": "node_modules/next/dist/server/route-modules/pages/module.js",
               "node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js": "node_modules/next/dist/shared/lib/i18n/detect-domain-locale.js",
               "node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js": "node_modules/next/dist/shared/lib/router/utils/format-next-pathname-info.js",
               "node_modules/next/dist/server/app-render/clean-async-snapshot-instance.js": "node_modules/next/dist/server/app-render/clean-async-snapshot-instance.js",
@@ -2320,26 +2264,26 @@
               "node_modules/next/dist/compiled/edge-runtime/index.js": "node_modules/next/dist/compiled/edge-runtime/index.js",
               "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json",
               "node_modules/next/dist/server/render.js": "node_modules/next/dist/server/render.js",
-              "node_modules/next/dist/server/route-modules/route-module.js": "node_modules/next/dist/server/route-modules/route-module.js",
               "node_modules/next/dist/server/app-render/app-render.js": "node_modules/next/dist/server/app-render/app-render.js",
+              "node_modules/next/dist/server/route-modules/route-module.js": "node_modules/next/dist/server/route-modules/route-module.js",
               "node_modules/next/dist/compiled/debug/package.json": "node_modules/next/dist/compiled/debug/package.json",
               "node_modules/next/dist/server/normalizers/built/app/app-bundle-path-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-bundle-path-normalizer.js",
+              "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/app/app-page-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-page-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/app/app-pathname-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-pathname-normalizer.js",
-              "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/app/app-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-bundle-path-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-bundle-path-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-filename-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-filename-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-page-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-page-normalizer.js",
               "node_modules/next/dist/server/normalizers/built/pages/pages-pathname-normalizer.js": "node_modules/next/dist/server/normalizers/built/pages/pages-pathname-normalizer.js",
-              "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/rsc/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/rsc/entrypoints.js",
               "node_modules/next/dist/server/route-modules/app-page/vendored/ssr/entrypoints.js": "node_modules/next/dist/server/route-modules/app-page/vendored/ssr/entrypoints.js",
+              "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js": "node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js",
               "node_modules/next/dist/lib/semver-noop.js": "node_modules/next/dist/lib/semver-noop.js",
               "node_modules/next/dist/server/after/revalidation-utils.js": "node_modules/next/dist/server/after/revalidation-utils.js",
-              "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
-              "node_modules/next/dist/shared/lib/router/utils/add-locale.js": "node_modules/next/dist/shared/lib/router/utils/add-locale.js",
               "node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js",
+              "node_modules/next/dist/shared/lib/router/utils/add-locale.js": "node_modules/next/dist/shared/lib/router/utils/add-locale.js",
+              "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js": "node_modules/next/dist/shared/lib/router/utils/add-path-suffix.js",
               "node_modules/next/dist/compiled/@edge-runtime/cookies/package.json": "node_modules/next/dist/compiled/@edge-runtime/cookies/package.json",
               "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js",
               "node_modules/next/dist/compiled/debug/index.js": "node_modules/next/dist/compiled/debug/index.js",
@@ -2371,10 +2315,10 @@
               "node_modules/next/dist/server/app-render/create-error-handler.js": "node_modules/next/dist/server/app-render/create-error-handler.js",
               "node_modules/next/dist/server/app-render/get-short-dynamic-param-type.js": "node_modules/next/dist/server/app-render/get-short-dynamic-param-type.js",
               "node_modules/next/dist/server/app-render/get-segment-param.js": "node_modules/next/dist/server/app-render/get-segment-param.js",
-              "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js": "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js",
               "node_modules/next/dist/server/app-render/get-script-nonce-from-header.js": "node_modules/next/dist/server/app-render/get-script-nonce-from-header.js",
-              "node_modules/next/dist/server/app-render/action-handler.js": "node_modules/next/dist/server/app-render/action-handler.js",
+              "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js": "node_modules/next/dist/server/app-render/parse-and-validate-flight-router-state.js",
               "node_modules/next/dist/server/app-render/create-flight-router-state-from-loader-tree.js": "node_modules/next/dist/server/app-render/create-flight-router-state-from-loader-tree.js",
+              "node_modules/next/dist/server/app-render/action-handler.js": "node_modules/next/dist/server/app-render/action-handler.js",
               "node_modules/next/dist/server/app-render/server-inserted-html.js": "node_modules/next/dist/server/app-render/server-inserted-html.js",
               "node_modules/next/dist/server/app-render/required-scripts.js": "node_modules/next/dist/server/app-render/required-scripts.js",
               "node_modules/next/dist/server/app-render/make-get-server-inserted-html.js": "node_modules/next/dist/server/app-render/make-get-server-inserted-html.js",
@@ -2399,13 +2343,13 @@
               "node_modules/next/dist/server/normalizers/normalizers.js": "node_modules/next/dist/server/normalizers/normalizers.js",
               "node_modules/next/dist/server/normalizers/prefixing-normalizer.js": "node_modules/next/dist/server/normalizers/prefixing-normalizer.js",
               "node_modules/next/dist/server/normalizers/absolute-filename-normalizer.js": "node_modules/next/dist/server/normalizers/absolute-filename-normalizer.js",
-              "node_modules/next/dist/server/normalizers/underscore-normalizer.js": "node_modules/next/dist/server/normalizers/underscore-normalizer.js",
               "node_modules/next/dist/server/normalizers/wrap-normalizer-fn.js": "node_modules/next/dist/server/normalizers/wrap-normalizer-fn.js",
+              "node_modules/next/dist/server/normalizers/underscore-normalizer.js": "node_modules/next/dist/server/normalizers/underscore-normalizer.js",
               "node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js": "node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js",
               "node_modules/next/dist/compiled/p-queue/package.json": "node_modules/next/dist/compiled/p-queue/package.json",
               "node_modules/next/dist/server/ReactDOMServerPages.js": "node_modules/next/dist/server/ReactDOMServerPages.js",
-              "node_modules/next/dist/server/optimize-amp.js": "node_modules/next/dist/server/optimize-amp.js",
               "node_modules/next/dist/lib/non-nullable.js": "node_modules/next/dist/lib/non-nullable.js",
+              "node_modules/next/dist/server/optimize-amp.js": "node_modules/next/dist/server/optimize-amp.js",
               "node_modules/next/dist/compiled/babel/code-frame.js": "node_modules/next/dist/compiled/babel/code-frame.js",
               "node_modules/next/dist/compiled/p-queue/index.js": "node_modules/next/dist/compiled/p-queue/index.js",
               "node_modules/next/dist/shared/lib/side-effect.js": "node_modules/next/dist/shared/lib/side-effect.js",
@@ -2425,17 +2369,17 @@
               "node_modules/next/dist/server/app-render/csrf-protection.js": "node_modules/next/dist/server/app-render/csrf-protection.js",
               "node_modules/next/dist/server/app-render/react-server.node.js": "node_modules/next/dist/server/app-render/react-server.node.js",
               "node_modules/next/dist/shared/lib/encode-uri-path.js": "node_modules/next/dist/shared/lib/encode-uri-path.js",
+              "node_modules/next/dist/client/components/match-segments.js": "node_modules/next/dist/client/components/match-segments.js",
+              "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js": "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js",
+              "node_modules/next/dist/server/app-render/get-preloadable-fonts.js": "node_modules/next/dist/server/app-render/get-preloadable-fonts.js",
+              "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js": "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js",
               "node_modules/next/dist/server/lib/app-dir-module.js": "node_modules/next/dist/server/lib/app-dir-module.js",
               "node_modules/next/dist/server/app-render/interop-default.js": "node_modules/next/dist/server/app-render/interop-default.js",
               "node_modules/next/dist/server/app-render/parse-loader-tree.js": "node_modules/next/dist/server/app-render/parse-loader-tree.js",
               "node_modules/next/dist/server/app-render/create-component-styles-and-scripts.js": "node_modules/next/dist/server/app-render/create-component-styles-and-scripts.js",
               "node_modules/next/dist/server/app-render/get-layer-assets.js": "node_modules/next/dist/server/app-render/get-layer-assets.js",
               "node_modules/next/dist/server/lib/patch-fetch.js": "node_modules/next/dist/server/lib/patch-fetch.js",
-              "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js": "node_modules/next/dist/server/app-render/has-loading-component-in-tree.js",
               "node_modules/next/dist/client/components/parallel-route-default.js": "node_modules/next/dist/client/components/parallel-route-default.js",
-              "node_modules/next/dist/client/components/match-segments.js": "node_modules/next/dist/client/components/match-segments.js",
-              "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js": "node_modules/next/dist/server/app-render/get-css-inlined-link-tags.js",
-              "node_modules/next/dist/server/app-render/get-preloadable-fonts.js": "node_modules/next/dist/server/app-render/get-preloadable-fonts.js",
               "node_modules/next/dist/client/components/use-reducer.js": "node_modules/next/dist/client/components/use-reducer.js",
               "node_modules/next/dist/client/components/error-boundary.js": "node_modules/next/dist/client/components/error-boundary.js",
               "node_modules/next/dist/client/components/app-router-announcer.js": "node_modules/next/dist/client/components/app-router-announcer.js",
@@ -2453,9 +2397,9 @@
               "node_modules/next/dist/compiled/data-uri-to-buffer/package.json": "node_modules/next/dist/compiled/data-uri-to-buffer/package.json",
               "node_modules/next/dist/compiled/shell-quote/package.json": "node_modules/next/dist/compiled/shell-quote/package.json",
               "node_modules/next/dist/compiled/stacktrace-parser/package.json": "node_modules/next/dist/compiled/stacktrace-parser/package.json",
-              "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js": "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/find-head-in-cache.js": "node_modules/next/dist/client/components/router-reducer/reducers/find-head-in-cache.js",
               "node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js": "node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js",
+              "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js": "node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js",
               "node_modules/next/dist/client/components/router-reducer/fill-lazy-items-till-leaf-with-head.js": "node_modules/next/dist/client/components/router-reducer/fill-lazy-items-till-leaf-with-head.js",
               "node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js": "node_modules/next/dist/client/components/router-reducer/prefetch-cache-utils.js",
               "node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js": "node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js",
@@ -2486,18 +2430,18 @@
               "node_modules/next/dist/client/components/router-reducer/create-router-cache-key.js": "node_modules/next/dist/client/components/router-reducer/create-router-cache-key.js",
               "node_modules/next/dist/client/components/react-dev-overlay/shared.js": "node_modules/next/dist/client/components/react-dev-overlay/shared.js",
               "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": "node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
-              "node_modules/next/dist/lib/metadata/get-metadata-route.js": "node_modules/next/dist/lib/metadata/get-metadata-route.js",
               "node_modules/next/dist/client/components/router-reducer/apply-flight-data.js": "node_modules/next/dist/client/components/router-reducer/apply-flight-data.js",
-              "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js",
-              "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js",
+              "node_modules/next/dist/lib/metadata/get-metadata-route.js": "node_modules/next/dist/lib/metadata/get-metadata-route.js",
               "node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js": "node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js",
+              "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/navigate-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/server-patch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/server-patch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/refresh-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/refresh-reducer.js",
-              "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/prefetch-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/hmr-refresh-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/hmr-refresh-reducer.js",
               "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js": "node_modules/next/dist/client/components/router-reducer/reducers/server-action-reducer.js",
+              "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.production.js",
+              "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js": "node_modules/next/dist/compiled/react-is/cjs/react-is.development.js",
               "node_modules/next/dist/shared/lib/page-path/remove-page-path-tail.js": "node_modules/next/dist/shared/lib/page-path/remove-page-path-tail.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/format-webpack-messages.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/format-webpack-messages.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/use-error-handler.js",
@@ -2545,15 +2489,15 @@
               "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/get-socket-url.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/get-socket-url.js",
               "node_modules/next/dist/compiled/babel-packages/package.json": "node_modules/next/dist/compiled/babel-packages/package.json",
               "node_modules/next/dist/compiled/browserslist/package.json": "node_modules/next/dist/compiled/browserslist/package.json",
-              "node_modules/next/dist/compiled/json5/package.json": "node_modules/next/dist/compiled/json5/package.json",
               "node_modules/next/dist/compiled/lru-cache/package.json": "node_modules/next/dist/compiled/lru-cache/package.json",
+              "node_modules/next/dist/compiled/json5/package.json": "node_modules/next/dist/compiled/json5/package.json",
               "node_modules/next/dist/compiled/semver/package.json": "node_modules/next/dist/compiled/semver/package.json",
               "node_modules/next/dist/client/components/unstable-rethrow.js": "node_modules/next/dist/client/components/unstable-rethrow.js",
               "node_modules/scheduler/index.js": "node_modules/scheduler/index.js",
               "node_modules/next/dist/compiled/babel-packages/packages-bundle.js": "node_modules/next/dist/compiled/babel-packages/packages-bundle.js",
               "node_modules/next/dist/compiled/browserslist/index.js": "node_modules/next/dist/compiled/browserslist/index.js",
-              "node_modules/next/dist/compiled/json5/index.js": "node_modules/next/dist/compiled/json5/index.js",
               "node_modules/next/dist/compiled/lru-cache/index.js": "node_modules/next/dist/compiled/lru-cache/index.js",
+              "node_modules/next/dist/compiled/json5/index.js": "node_modules/next/dist/compiled/json5/index.js",
               "node_modules/next/dist/compiled/semver/index.js": "node_modules/next/dist/compiled/semver/index.js",
               "node_modules/streamsearch/package.json": "node_modules/streamsearch/package.json",
               "node_modules/next/dist/client/components/router-reducer/invalidate-cache-by-router-state.js": "node_modules/next/dist/client/components/router-reducer/invalidate-cache-by-router-state.js",
@@ -2605,22 +2549,22 @@
               "node_modules/caniuse-lite/dist/unpacker/browserVersions.js": "node_modules/caniuse-lite/dist/unpacker/browserVersions.js",
               "node_modules/caniuse-lite/dist/lib/statuses.js": "node_modules/caniuse-lite/dist/lib/statuses.js",
               "node_modules/caniuse-lite/dist/lib/supported.js": "node_modules/caniuse-lite/dist/lib/supported.js",
+              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogBody.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogBody.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogContent.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogContent.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/DialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/styles.js",
-              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Dialog/Dialog.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/Overlay.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/Overlay.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Terminal/Terminal.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Terminal/Terminal.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/styles.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/VersionStalenessInfo.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/VersionStalenessInfo/VersionStalenessInfo.js",
+              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/styles.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/styles.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/Toast.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Toast/Toast.js",
-              "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/LeftRightDialogHeader/LeftRightDialogHeader.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/container/RuntimeError/GroupedStackFrames.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/container/RuntimeError/GroupedStackFrames.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/CodeFrame/index.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/CodeFrame/index.js",
-              "node_modules/caniuse-lite/data/browsers.js": "node_modules/caniuse-lite/data/browsers.js",
               "node_modules/caniuse-lite/data/browserVersions.js": "node_modules/caniuse-lite/data/browserVersions.js",
+              "node_modules/caniuse-lite/data/browsers.js": "node_modules/caniuse-lite/data/browsers.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/hooks/use-on-click-outside.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/hooks/use-on-click-outside.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/icons/FrameworkIcon.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/icons/FrameworkIcon.js",
               "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/maintain--tab-focus.js": "node_modules/next/dist/client/components/react-dev-overlay/internal/components/Overlay/maintain--tab-focus.js",
@@ -2696,14 +2640,13 @@
       "/_app.rsc.json",
       "/_document.rsc.json",
       "/_error.rsc.json",
-      "/_next/static/YwC1fWq8_q6gNhfyOpioA/_buildManifest.js",
-      "/_next/static/YwC1fWq8_q6gNhfyOpioA/_ssgManifest.js",
+      "/_next/static/6a7N7Jlc4X3YIhsaIT0nZ/_buildManifest.js",
+      "/_next/static/6a7N7Jlc4X3YIhsaIT0nZ/_ssgManifest.js",
       "/_next/static/chunks/215-b5dcb10e45886367.js",
       "/_next/static/chunks/4bd1b696-499459b82e79772a.js",
       "/_next/static/chunks/app/_not-found/page-c815399d50c81679.js",
-      "/_next/static/chunks/app/api/remove-bg/route-5651916d10ebe99d.js",
       "/_next/static/chunks/app/layout-87fcbbef35e96787.js",
-      "/_next/static/chunks/app/page-bd252244bc9be204.js",
+      "/_next/static/chunks/app/page-ef3d027ccf3a9654.js",
       "/_next/static/chunks/framework-f66176bb897dc684.js",
       "/_next/static/chunks/main-8bcae30649665324.js",
       "/_next/static/chunks/main-app-c14dfc8878359bf5.js",
@@ -2723,568 +2666,8 @@
     ],
     "identifiers": {
       "wasm": {},
-      "manifest": {
-        "__RSC_SERVER_MANIFEST": {
-          "consumers": 1,
-          "groupedPath": "88a389dd6c068190adb2efc795e4063c",
-          "inlined": true,
-          "byteLength": 129,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "__REACT_LOADABLE_MANIFEST": {
-          "consumers": 1,
-          "groupedPath": "88a389dd6c068190adb2efc795e4063c",
-          "inlined": true,
-          "byteLength": 36,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "__NEXT_FONT_MANIFEST": {
-          "consumers": 1,
-          "groupedPath": "88a389dd6c068190adb2efc795e4063c",
-          "inlined": true,
-          "byteLength": 212,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        }
-      },
-      "webpack": {
-        "37": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 130,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "72": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 382,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "210": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 2262,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "234": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 16825,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "381": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 1117,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "385": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 19902,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "538": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 4342,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "1051": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 1665,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "1219": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 524,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "1414": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 739,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "1471": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 2481,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "1553": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 163,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "1834": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 209,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "2018": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 224,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "2067": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 55,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "2282": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 129,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "2296": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 3885,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "2316": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 186,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "2708": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 63,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "2845": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 444,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "3038": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 44834,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "3496": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 252,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "3503": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 2968,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "3563": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 8697,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "3749": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 4959,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "4089": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 39947,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "4207": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 275,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "4446": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 86,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "4643": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 1848,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "4917": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 4184,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "5081": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 3585,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "5303": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 6,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "5331": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 41,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "5365": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 996,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "5367": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 5377,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "5437": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 397,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "5688": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 41,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "5805": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 345,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "6195": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 50,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "6216": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 1220,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "6410": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 9284,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "6572": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 706,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "6797": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 5159,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "7247": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 120,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "7254": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 172,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "7363": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 3137,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "7501": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 282,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "7997": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 87,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "8020": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 857,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "8170": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 1693,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "8364": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 1670,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "8454": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 130,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "8478": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 222,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "8569": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 24461,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "8605": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 27,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "8753": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 50,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "9292": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 330,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "9392": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 5302,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        },
-        "9769": {
-          "consumers": 1,
-          "groupedPath": "e22d59bbc8b1bf3d989b9b4642e7f487",
-          "inlined": true,
-          "byteLength": 1708,
-          "consumersList": [
-            "/api/remove-bg.func/index.js"
-          ]
-        }
-      }
+      "manifest": {},
+      "webpack": {}
     }
   }
 }

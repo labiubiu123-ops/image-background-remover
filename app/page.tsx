@@ -63,27 +63,35 @@ export default function Home() {
     const startTime = Date.now()
 
     try {
-      // 直接发送 base64 JSON，避免 Edge Runtime FormData 兼容性问题
+      // 直接从浏览器调用 remove.bg API，绕过 Cloudflare Workers CPU 限制
       const base64Data = originalImage.split(',')[1]
       const mimeType = originalImage.match(/data:([^;]+);/)?.[1] || 'image/jpeg'
+      const apiKey = process.env.NEXT_PUBLIC_REMOVEBG_API_KEY
 
-      const response = await fetch('/api/remove-bg', {
+      if (!apiKey) {
+        throw new Error('API 密钥未配置，请联系管理员')
+      }
+
+      const response = await fetch('https://api.remove.bg/v1.0/removebg', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ image: base64Data, mimeType }),
+        headers: {
+          'X-Api-Key': apiKey,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          image_file_b64: base64Data,
+          size: 'full',
+          type: 'auto',
+        }),
       })
 
       if (!response.ok) {
-        // 尝试解析 JSON 错误
-        const contentType = response.headers.get('content-type')
-        if (contentType?.includes('application/json')) {
-          const data = await response.json()
-          throw new Error(ERROR_MESSAGES[data.code] || `处理失败（${response.status}），请重试`)
-        }
+        if (response.status === 402) throw new Error('API 额度已用完，请联系管理员')
+        if (response.status === 403) throw new Error('API 密钥无效，请联系管理员')
         throw new Error(`处理失败（${response.status}），请重试`)
       }
 
-      // API 现在返回图片二进制，转为 base64
+      // remove.bg 直接返回图片二进制
       const imageBlob = await response.blob()
       const dataUrl = await new Promise<string>((resolve, reject) => {
         const reader = new FileReader()
