@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+export const runtime = 'edge'
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData()
@@ -9,12 +11,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'No image provided', code: 'NO_IMAGE' }, { status: 400 })
     }
 
-    // 文件大小校验（10MB）
     if (imageFile.size > 10 * 1024 * 1024) {
       return NextResponse.json({ error: 'File too large (max 10MB)', code: 'FILE_TOO_LARGE' }, { status: 413 })
     }
 
-    // 文件类型校验
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp']
     if (!allowedTypes.includes(imageFile.type)) {
       return NextResponse.json({ error: 'Invalid format. Only JPG, PNG, WebP allowed', code: 'INVALID_FORMAT' }, { status: 415 })
@@ -25,7 +25,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'API key not configured', code: 'CONFIG_ERROR' }, { status: 500 })
     }
 
-    // 构建发往 Remove.bg 的请求（multipart，不落盘）
     const removeBgForm = new FormData()
     removeBgForm.append('image_file', imageFile, imageFile.name)
     removeBgForm.append('size', 'auto')
@@ -46,12 +45,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Remove.bg API error', code: 'API_ERROR' }, { status: 502 })
     }
 
-    // 将结果 PNG 转 base64 返回前端
     const resultBuffer = await response.arrayBuffer()
-    const base64 = Buffer.from(resultBuffer).toString('base64')
-
-    return NextResponse.json({
-      image: `data:image/png;base64,${base64}`,
+    
+    return new NextResponse(resultBuffer, {
+      status: 200,
+      headers: {
+        'Content-Type': 'image/png',
+      },
     })
   } catch {
     return NextResponse.json({ error: 'Internal server error', code: 'INTERNAL_ERROR' }, { status: 500 })

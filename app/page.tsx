@@ -79,13 +79,26 @@ export default function Home() {
         body: fd,
       })
 
-      const data = await response.json()
-
       if (!response.ok) {
-        throw new Error(ERROR_MESSAGES[data.code] || `处理失败（${response.status}），请重试`)
+        // 尝试解析 JSON 错误
+        const contentType = response.headers.get('content-type')
+        if (contentType?.includes('application/json')) {
+          const data = await response.json()
+          throw new Error(ERROR_MESSAGES[data.code] || `处理失败（${response.status}），请重试`)
+        }
+        throw new Error(`处理失败（${response.status}），请重试`)
       }
 
-      setProcessedImage(data.image)
+      // API 现在返回图片二进制，转为 base64
+      const imageBlob = await response.blob()
+      const dataUrl = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onloadend = () => resolve(reader.result as string)
+        reader.onerror = reject
+        reader.readAsDataURL(imageBlob)
+      })
+      
+      setProcessedImage(dataUrl)
       setElapsedTime(Date.now() - startTime)
     } catch (err) {
       setError(err instanceof Error ? err.message : '处理失败，请重试')
@@ -96,10 +109,26 @@ export default function Home() {
 
   const downloadImage = () => {
     if (!processedImage) return
+    
+    // 将 data URL 转为 Blob，兼容微信浏览器
+    const arr = processedImage.split(',')
+    const mime = arr[0].match(/:(.*?);/)?.[1] || 'image/png'
+    const bstr = atob(arr[1])
+    let n = bstr.length
+    const u8arr = new Uint8Array(n)
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n)
+    }
+    const blob = new Blob([u8arr], { type: mime })
+    const url = URL.createObjectURL(blob)
+    
     const a = document.createElement('a')
-    a.href = processedImage
+    a.href = url
     a.download = `${originalFileName}_no_bg.png`
     a.click()
+    
+    // 释放 Blob URL
+    setTimeout(() => URL.revokeObjectURL(url), 100)
   }
 
   const reset = () => {
