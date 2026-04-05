@@ -8,4 +8,4 @@ pages_build_output_dir = ".vercel/output/static"
 [[d1_databases]]
 binding = "DB"
 database_name = "image-bg-remover-db"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "cd11b72b-82c5-4b17-929e-fb8532389624"
