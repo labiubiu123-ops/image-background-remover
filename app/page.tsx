@@ -1,9 +1,13 @@
 'use client'
 
 import { useState, useRef, useCallback } from 'react'
+import { useSession } from 'next-auth/react'
 import CompareSlider from '@/components/CompareSlider'
+import LoginButton from '@/components/LoginButton'
+import UserMenu from '@/components/UserMenu'
 
 export default function Home() {
+  const { data: session, status } = useSession()
   const [originalImage, setOriginalImage] = useState<string | null>(null)
   const [originalFileName, setOriginalFileName] = useState<string>('image')
   const [processedImage, setProcessedImage] = useState<string | null>(null)
@@ -13,14 +17,8 @@ export default function Home() {
   const [elapsedTime, setElapsedTime] = useState<number | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const ERROR_MESSAGES: Record<string, string> = {
-    FILE_TOO_LARGE: '文件超过 10MB，请压缩后重试',
-    INVALID_FORMAT: '不支持的格式，请上传 JPG、PNG 或 WebP',
-    API_QUOTA_EXCEEDED: 'API 免费额度已用尽，请稍后再试',
-    INVALID_API_KEY: 'API Key 配置错误，请联系管理员',
-    CONFIG_ERROR: '服务配置异常，请联系管理员',
-    API_ERROR: 'AI 处理服务异常，请重试',
-  }
+  const isLoggedIn = status === 'authenticated'
+  const isLoading = status === 'loading'
 
   const handleFile = useCallback((file: File) => {
     const allowed = ['image/jpeg', 'image/png', 'image/webp']
@@ -63,9 +61,7 @@ export default function Home() {
     const startTime = Date.now()
 
     try {
-      // 直接从浏览器调用 remove.bg API，绕过 Cloudflare Workers CPU 限制
       const base64Data = originalImage.split(',')[1]
-      const mimeType = originalImage.match(/data:([^;]+);/)?.[1] || 'image/jpeg'
       const apiKey = process.env.NEXT_PUBLIC_REMOVEBG_API_KEY
 
       if (!apiKey) {
@@ -91,7 +87,6 @@ export default function Home() {
         throw new Error(`处理失败（${response.status}），请重试`)
       }
 
-      // remove.bg 直接返回图片二进制
       const imageBlob = await response.blob()
       const dataUrl = await new Promise<string>((resolve, reject) => {
         const reader = new FileReader()
@@ -99,7 +94,7 @@ export default function Home() {
         reader.onerror = reject
         reader.readAsDataURL(imageBlob)
       })
-      
+
       setProcessedImage(dataUrl)
       setElapsedTime(Date.now() - startTime)
     } catch (err) {
@@ -111,8 +106,7 @@ export default function Home() {
 
   const downloadImage = () => {
     if (!processedImage) return
-    
-    // 将 data URL 转为 Blob，兼容微信浏览器
+
     const arr = processedImage.split(',')
     const mime = arr[0].match(/:(.*?);/)?.[1] || 'image/png'
     const bstr = atob(arr[1])
@@ -123,13 +117,12 @@ export default function Home() {
     }
     const blob = new Blob([u8arr], { type: mime })
     const url = URL.createObjectURL(blob)
-    
+
     const a = document.createElement('a')
     a.href = url
     a.download = `${originalFileName}_no_bg.png`
     a.click()
-    
-    // 释放 Blob URL
+
     setTimeout(() => URL.revokeObjectURL(url), 100)
   }
 
@@ -144,17 +137,46 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-950 text-gray-100">
       {/* Header */}
-      <header className="text-center pt-14 pb-8 px-4">
-        <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent mb-3">
+      <header className="flex items-center justify-between px-6 pt-6 pb-4 max-w-5xl mx-auto">
+        <h1 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
           ✂️ BG Remover
         </h1>
-        <p className="text-gray-400 text-lg">免费在线背景去除 · 秒级处理 · 图片不保存</p>
+
+        {/* Auth area */}
+        <div className="flex items-center gap-3">
+          {isLoading && (
+            <div className="w-8 h-8 border-2 border-gray-700 border-t-gray-400 rounded-full animate-spin" />
+          )}
+          {!isLoading && !isLoggedIn && <LoginButton />}
+          {!isLoading && isLoggedIn && session?.user && (
+            <UserMenu user={session.user} />
+          )}
+        </div>
       </header>
+
+      {/* Hero (only when not logged in) */}
+      {!isLoggedIn && !isLoading && (
+        <section className="text-center pt-16 pb-12 px-4">
+          <p className="text-gray-400 text-lg mb-2">免费在线背景去除 · 秒级处理 · 图片不保存</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
+            登录即可免费使用
+          </h2>
+          <p className="text-gray-500 mb-8 text-sm">使用 Google 账号一键登录，无需注册</p>
+          <LoginButton />
+        </section>
+      )}
+
+      {/* Subtitle (when logged in) */}
+      {isLoggedIn && !originalImage && (
+        <p className="text-center text-gray-400 text-base pb-4">
+          免费在线背景去除 · 秒级处理 · 图片不保存
+        </p>
+      )}
 
       <div className="max-w-4xl mx-auto px-4 pb-20 flex flex-col items-center gap-8">
 
-        {/* Upload Zone */}
-        {!originalImage && (
+        {/* Upload Zone - only when logged in */}
+        {isLoggedIn && !originalImage && (
           <div
             onClick={() => fileInputRef.current?.click()}
             onDrop={handleDrop}
@@ -181,6 +203,18 @@ export default function Home() {
           </div>
         )}
 
+        {/* Locked state - not logged in */}
+        {!isLoggedIn && !isLoading && (
+          <div className="w-full border-2 border-dashed border-gray-800 rounded-2xl p-16 text-center bg-gray-900/40">
+            <div className="text-5xl mb-4">🔒</div>
+            <h2 className="text-xl font-semibold text-gray-400 mb-2">
+              请先登录后使用
+            </h2>
+            <p className="text-gray-600 text-sm mb-6">支持 JPG、PNG、WebP · 最大 10MB</p>
+            <LoginButton />
+          </div>
+        )}
+
         {/* Error */}
         {error && (
           <div className="w-full max-w-2xl bg-red-950/50 border border-red-800 text-red-300 px-5 py-4 rounded-xl text-sm">
@@ -189,7 +223,7 @@ export default function Home() {
         )}
 
         {/* Buttons */}
-        {originalImage && (
+        {isLoggedIn && originalImage && (
           <div className="flex flex-wrap gap-3 justify-center">
             {!processedImage && (
               <button
@@ -239,7 +273,7 @@ export default function Home() {
         )}
 
         {/* Original preview (before processing) */}
-        {originalImage && !processedImage && !loading && (
+        {isLoggedIn && originalImage && !processedImage && !loading && (
           <div className="w-full max-w-2xl">
             <p className="text-gray-500 text-sm mb-2 text-center">原图预览</p>
             <img
