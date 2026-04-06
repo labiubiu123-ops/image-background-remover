@@ -34,7 +34,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth(() => {
       signIn: '/',
     },
     callbacks: {
-      async session({ session, user, token }) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      async session({ session, user, token }: { session: any; user: any; token: any }) {
         // database session: user 有值；jwt session: token 有值
         if (session.user) {
           session.user.id = (user?.id ?? token?.sub) as string
