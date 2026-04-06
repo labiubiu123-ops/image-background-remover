@@ -17,13 +17,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Verify next binary
+        run: ls node_modules/.bin/next && echo "next binary OK"
+
       - name: Build Next.js
-        run: ./node_modules/.bin/next build
+        run: npm run build
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
@@ -32,7 +34,7 @@ jobs:
           NEXT_PUBLIC_REMOVEBG_API_KEY: ${{ secrets.NEXT_PUBLIC_REMOVEBG_API_KEY }}
 
       - name: Build for Cloudflare (OpenNext)
-        run: ./node_modules/.bin/opennextjs-cloudflare build
+        run: npx --no-install opennextjs-cloudflare build
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
