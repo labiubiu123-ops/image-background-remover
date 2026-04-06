@@ -1,4 +1,5 @@
-// @ts-nocheck
+import type { OpenNextConfig } from "@opennextjs/cloudflare";
+
 const config = {
   default: {
     override: {
@@ -16,8 +17,11 @@ const config = {
       wrapper: "cloudflare-edge",
       converter: "edge",
       proxyExternalRequest: "fetch",
+      incrementalCache: "dummy",
+      tagCache: "dummy",
+      queue: "dummy",
     },
   },
-};
+} satisfies OpenNextConfig;
 
 export default config;
