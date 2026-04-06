@@ -2,6 +2,10 @@ import NextAuth from 'next-auth'
 import Google from 'next-auth/providers/google'
 import { D1Adapter } from '@auth/d1-adapter'
 
+// Cloudflare D1 type stub (avoids @cloudflare/workers-types dependency)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type D1Database = any
+
 // Cloudflare Pages 通过 process.env 暴露 D1 binding
 // 本地开发时 DB 为 undefined，会跳过 adapter（不存储）
 declare global {
@@ -31,8 +35,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth(() => {
       signIn: '/',
     },
     callbacks: {
-      // @ts-expect-error next-auth v5 beta type mismatch
-      async session({ session, user, token }) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      async session({ session, user, token }: { session: any; user: any; token: any }) {
         if (session.user) {
           session.user.id = (user?.id ?? token?.sub) as string
         }
