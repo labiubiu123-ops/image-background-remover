@@ -1,6 +1,6 @@
 import type { OpenNextConfig } from "@opennextjs/cloudflare";
 
-const config = {
+const config: OpenNextConfig = {
   default: {
     override: {
       wrapper: "cloudflare-node",
@@ -11,6 +11,7 @@ const config = {
       queue: "dummy",
     },
   },
+  edgeExternals: ["node:crypto"],
   middleware: {
     external: true,
     override: {
@@ -22,6 +23,6 @@ const config = {
       queue: "dummy",
     },
   },
-} satisfies OpenNextConfig;
+} as OpenNextConfig;
 
 export default config;
