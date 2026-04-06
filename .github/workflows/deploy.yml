@@ -23,7 +23,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build Next.js
-        run: npx next build
+        run: ./node_modules/.bin/next build
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
@@ -32,7 +32,7 @@ jobs:
           NEXT_PUBLIC_REMOVEBG_API_KEY: ${{ secrets.NEXT_PUBLIC_REMOVEBG_API_KEY }}
 
       - name: Build for Cloudflare (OpenNext)
-        run: npx opennextjs-cloudflare build
+        run: ./node_modules/.bin/opennextjs-cloudflare build
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
