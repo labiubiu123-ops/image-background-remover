@@ -34,7 +34,7 @@ jobs:
           NEXT_PUBLIC_REMOVEBG_API_KEY: ${{ secrets.NEXT_PUBLIC_REMOVEBG_API_KEY }}
 
       - name: Build for Cloudflare (OpenNext)
-        run: yarn node_modules/.bin/opennextjs-cloudflare build
+        run: ./node_modules/.bin/opennextjs-cloudflare build
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
