@@ -124,10 +124,18 @@
       "status": 404
     },
     {
+      "src": "^/api/auth/(?<nxtPnextauth>.+?)(?:\\.rsc)(?:/)?$",
+      "dest": "/api/auth/[...nextauth].rsc?nxtPnextauth=$nxtPnextauth"
+    },
+    {
+      "src": "^/api/auth/(?<nxtPnextauth>.+?)(?:/)?$",
+      "dest": "/api/auth/[...nextauth]?nxtPnextauth=$nxtPnextauth"
+    },
+    {
       "handle": "hit"
     },
     {
-      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|6a7N7Jlc4X3YIhsaIT0nZ)/.+",
+      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|3lN_\\-5xGJXPMnOls3lw3w)/.+",
       "headers": {
         "cache-control": "public,max-age=31536000,immutable"
       },
@@ -223,7 +231,7 @@
     }
   },
   "framework": {
-    "version": "15.0.0"
+    "version": "15.2.9"
   },
   "crons": []
 }

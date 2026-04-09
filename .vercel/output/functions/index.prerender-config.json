@@ -3,7 +3,7 @@
   "expiration": false,
   "sourcePath": "/",
   "group": 1,
-  "bypassToken": "3c05fb6b3a7327e01492ab7267ea54f5",
+  "bypassToken": "197b7fce24f53e7a5eeb0a4649e88185",
   "experimentalBypassFor": [
     {
       "type": "header",
@@ -26,5 +26,13 @@
     "x-next-cache-tags": "_N_T_/layout,_N_T_/page,_N_T_/",
     "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch"
   },
-  "allowQuery": []
+  "allowQuery": [],
+  "allowHeader": [
+    "host",
+    "x-matched-path",
+    "x-prerender-revalidate",
+    "x-prerender-revalidate-if-generated",
+    "x-next-revalidated-tags",
+    "x-next-revalidate-tag-token"
+  ]
 }

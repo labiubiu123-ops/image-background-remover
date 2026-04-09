@@ -1,0 +1,18 @@
+{
+  "runtime": "edge",
+  "name": "api/remove-bg",
+  "deploymentTarget": "v8-worker",
+  "entrypoint": "index.js",
+  "assets": [],
+  "framework": {
+    "slug": "nextjs",
+    "version": "15.2.9"
+  },
+  "environment": {
+    "__NEXT_BUILD_ID": "3lN_-5xGJXPMnOls3lw3w",
+    "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "kGLB4+9uSvjU4GBR32RbAM7mNx/OOjhPOd2x98UYjng=",
+    "__NEXT_PREVIEW_MODE_ID": "197b7fce24f53e7a5eeb0a4649e88185",
+    "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "a6d3167f889d4bb38b616baa4f3bb26632f355fd3319060982c7bc2979cb3775",
+    "__NEXT_PREVIEW_MODE_SIGNING_KEY": "d23899d4b99ad86462397d442ea9d6ddf0bb3225d607c1c24b1d1d2534c64d2c"
+  }
+}

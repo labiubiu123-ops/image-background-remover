@@ -1,15 +1,18 @@
 'use client'
 
 import { useState, useRef, useCallback } from 'react'
-import { useSession } from 'next-auth/react'
+import { useSession, signIn, signOut } from 'next-auth/react'
 import CompareSlider from '@/components/CompareSlider'
-import LoginButton from '@/components/LoginButton'
-import UserMenu from '@/components/UserMenu'
+import CreditsBar from '@/components/CreditsBar'
+import NoCreditsModal from '@/components/NoCreditsModal'
+import PricingSection from '@/components/PricingSection'
 
 export default function Home() {
   const { data: session, status } = useSession()
   const [originalImage, setOriginalImage] = useState<string | null>(null)
   const [originalFileName, setOriginalFileName] = useState<string>('image')
+  const [showNoCredits, setShowNoCredits] = useState(false)
+  const [creditsRemaining, setCreditsRemaining] = useState<number | undefined>(undefined)
   const [processedImage, setProcessedImage] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -30,12 +33,10 @@ export default function Home() {
       setError('文件超过 10MB，请压缩后重试')
       return
     }
-
     setOriginalFileName(file.name.replace(/\.[^.]+$/, ''))
     setProcessedImage(null)
     setError(null)
     setElapsedTime(null)
-
     const reader = new FileReader()
     reader.onload = (e) => setOriginalImage(e.target?.result as string)
     reader.readAsDataURL(file)
@@ -55,48 +56,29 @@ export default function Home() {
 
   const removeBackground = async () => {
     if (!originalImage) return
-
     setLoading(true)
     setError(null)
     const startTime = Date.now()
-
     try {
       const base64Data = originalImage.split(',')[1]
-      const apiKey = process.env.NEXT_PUBLIC_REMOVEBG_API_KEY
-
-      if (!apiKey) {
-        throw new Error('API 密钥未配置，请联系管理员')
-      }
-
-      const response = await fetch('https://api.remove.bg/v1.0/removebg', {
+      const response = await fetch('/api/remove-bg', {
         method: 'POST',
-        headers: {
-          'X-Api-Key': apiKey,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          image_file_b64: base64Data,
-          size: 'full',
-          type: 'auto',
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image_base64: base64Data }),
       })
-
       if (!response.ok) {
-        if (response.status === 402) throw new Error('API 额度已用完，请联系管理员')
-        if (response.status === 403) throw new Error('API 密钥无效，请联系管理员')
-        throw new Error(`处理失败（${response.status}），请重试`)
+        const err = await response.json().catch(() => ({}))
+        // 积分不足，弹出购买弹窗
+        if (response.status === 402 || err.code === 'NO_CREDITS') {
+          setShowNoCredits(true)
+          return
+        }
+        throw new Error(err.error || `处理失败（${response.status}），请重试`)
       }
-
-      const imageBlob = await response.blob()
-      const dataUrl = await new Promise<string>((resolve, reject) => {
-        const reader = new FileReader()
-        reader.onloadend = () => resolve(reader.result as string)
-        reader.onerror = reject
-        reader.readAsDataURL(imageBlob)
-      })
-
-      setProcessedImage(dataUrl)
+      const { result_b64, credits_remaining } = await response.json()
+      setProcessedImage(`data:image/png;base64,${result_b64}`)
       setElapsedTime(Date.now() - startTime)
+      if (credits_remaining !== undefined) setCreditsRemaining(credits_remaining)
     } catch (err) {
       setError(err instanceof Error ? err.message : '处理失败，请重试')
     } finally {
@@ -106,23 +88,18 @@ export default function Home() {
 
   const downloadImage = () => {
     if (!processedImage) return
-
     const arr = processedImage.split(',')
     const mime = arr[0].match(/:(.*?);/)?.[1] || 'image/png'
     const bstr = atob(arr[1])
     let n = bstr.length
     const u8arr = new Uint8Array(n)
-    while (n--) {
-      u8arr[n] = bstr.charCodeAt(n)
-    }
+    while (n--) u8arr[n] = bstr.charCodeAt(n)
     const blob = new Blob([u8arr], { type: mime })
     const url = URL.createObjectURL(blob)
-
     const a = document.createElement('a')
     a.href = url
     a.download = `${originalFileName}_no_bg.png`
     a.click()
-
     setTimeout(() => URL.revokeObjectURL(url), 100)
   }
 
@@ -135,117 +112,162 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-950 text-gray-100">
-      {/* Header */}
-      <header className="flex items-center justify-between px-6 pt-6 pb-4 max-w-5xl mx-auto">
-        <h1 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
-          ✂️ BG Remover
-        </h1>
+    <div className="min-h-screen bg-[#0f0f13] text-gray-100 flex flex-col">
 
-        {/* Auth area */}
+      {/* 积分不足弹窗 */}
+      {showNoCredits && <NoCreditsModal onClose={() => setShowNoCredits(false)} />}
+
+      {/* ── Navbar ── */}
+      <nav className="flex items-center justify-between px-6 py-4 border-b border-white/5 max-w-6xl mx-auto w-full">
+        <div className="flex items-center gap-2">
+          <span className="text-2xl">✂️</span>
+          <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent">
+            BG Remover
+          </span>
+        </div>
+
         <div className="flex items-center gap-3">
           {isLoading && (
-            <div className="w-8 h-8 border-2 border-gray-700 border-t-gray-400 rounded-full animate-spin" />
+            <div className="w-5 h-5 border-2 border-gray-600 border-t-gray-300 rounded-full animate-spin" />
           )}
-          {!isLoading && !isLoggedIn && <LoginButton />}
+          {!isLoading && !isLoggedIn && (
+            <button
+              onClick={() => signIn('google', { callbackUrl: '/' })}
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/10 text-white text-sm font-medium py-2 px-4 rounded-full transition-all"
+            >
+              <GoogleIcon />
+              登录
+            </button>
+          )}
           {!isLoading && isLoggedIn && session?.user && (
-            <UserMenu user={session.user} />
+            <div className="flex items-center gap-3">
+              {/* 积分显示 */}
+              <CreditsBar onUpgradeClick={() => setShowNoCredits(true)} />
+              {session.user.image
+                ? <img src={session.user.image} alt="avatar" className="w-8 h-8 rounded-full ring-2 ring-violet-500/40" />
+                : <div className="w-8 h-8 rounded-full bg-violet-600 flex items-center justify-center text-sm font-bold">{session.user.name?.[0]}</div>
+              }
+              <button onClick={() => signOut()} className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+                退出
+              </button>
+            </div>
           )}
         </div>
-      </header>
+      </nav>
 
-      {/* Hero (only when not logged in) */}
-      {!isLoggedIn && !isLoading && (
-        <section className="text-center pt-16 pb-12 px-4">
-          <p className="text-gray-400 text-lg mb-2">免费在线背景去除 · 秒级处理 · 图片不保存</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
-            登录即可免费使用
-          </h2>
-          <p className="text-gray-500 mb-8 text-sm">使用 Google 账号一键登录，无需注册</p>
-          <LoginButton />
-        </section>
-      )}
+      {/* ── Main ── */}
+      <main className="flex-1 flex flex-col items-center px-4 py-12 max-w-4xl mx-auto w-full gap-10">
 
-      {/* Subtitle (when logged in) */}
-      {isLoggedIn && !originalImage && (
-        <p className="text-center text-gray-400 text-base pb-4">
-          免费在线背景去除 · 秒级处理 · 图片不保存
-        </p>
-      )}
+        {/* Not logged in state */}
+        {!isLoggedIn && !isLoading && (
+          <div className="w-full flex flex-col items-center gap-6 pt-8">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+                <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  一键去除图片背景
+                </span>
+              </h1>
+              <p className="text-gray-400 text-lg">上传图片，AI 自动抠图，秒级完成</p>
+            </div>
 
-      <div className="max-w-4xl mx-auto px-4 pb-20 flex flex-col items-center gap-8">
+            {/* Feature pills */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {['⚡ 秒级处理', '🔒 图片不存储', '🎯 高精度抠图', '📥 下载透明 PNG'].map(f => (
+                <span key={f} className="bg-white/5 border border-white/10 text-gray-300 text-sm px-4 py-1.5 rounded-full">
+                  {f}
+                </span>
+              ))}
+            </div>
 
-        {/* Upload Zone - only when logged in */}
-        {isLoggedIn && !originalImage && (
-          <div
-            onClick={() => fileInputRef.current?.click()}
-            onDrop={handleDrop}
-            onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
-            onDragLeave={() => setDragOver(false)}
-            className={`w-full border-2 border-dashed rounded-2xl p-16 text-center cursor-pointer transition-all
-              ${dragOver
-                ? 'border-violet-400 bg-violet-950/30'
-                : 'border-gray-700 bg-gray-900 hover:border-violet-500 hover:bg-gray-900/80'
-              }`}
-          >
-            <input
-              ref={fileInputRef}
-              type="file"
-              className="hidden"
-              accept="image/jpeg,image/png,image/webp"
-              onChange={handleFileInput}
-            />
-            <div className="text-5xl mb-4">📤</div>
-            <h2 className="text-xl font-semibold text-gray-200 mb-2">
-              拖拽图片到此处，或点击上传
-            </h2>
-            <p className="text-gray-500 text-sm">支持 JPG、PNG、WebP · 最大 10MB</p>
+            {/* Login CTA */}
+            <button
+              onClick={() => signIn('google', { callbackUrl: '/' })}
+              className="flex items-center gap-3 bg-white hover:bg-gray-100 text-gray-900 font-semibold py-3.5 px-8 rounded-full shadow-lg shadow-violet-500/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <GoogleIcon color />
+              使用 Google 账号免费登录
+            </button>
+
+            {/* Preview mockup */}
+            <div className="w-full max-w-2xl rounded-2xl border border-white/8 bg-white/3 p-6 flex items-center justify-center gap-4 mt-2">
+              <div className="flex-1 h-32 rounded-xl bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-gray-500 text-sm">原图</div>
+              <div className="text-violet-400 text-2xl font-bold">→</div>
+              <div className="flex-1 h-32 rounded-xl flex items-center justify-center text-gray-500 text-sm"
+                style={{ background: 'repeating-conic-gradient(#1f2937 0% 25%, #111827 0% 50%) 0 0 / 16px 16px', borderRadius: '0.75rem' }}>
+                透明背景
+              </div>
+            </div>
           </div>
         )}
 
-        {/* Locked state - not logged in */}
-        {!isLoggedIn && !isLoading && (
-          <div className="w-full border-2 border-dashed border-gray-800 rounded-2xl p-16 text-center bg-gray-900/40">
-            <div className="text-5xl mb-4">🔒</div>
-            <h2 className="text-xl font-semibold text-gray-400 mb-2">
-              请先登录后使用
-            </h2>
-            <p className="text-gray-600 text-sm mb-6">支持 JPG、PNG、WebP · 最大 10MB</p>
-            <LoginButton />
+        {/* Logged in — upload zone */}
+        {isLoggedIn && !originalImage && (
+          <div className="w-full flex flex-col items-center gap-6">
+            <div className="text-center">
+              <h1 className="text-2xl font-bold text-gray-100 mb-1">上传图片，开始抠图</h1>
+              <p className="text-gray-500 text-sm">支持 JPG、PNG、WebP，最大 10MB</p>
+            </div>
+
+            <div
+              onClick={() => fileInputRef.current?.click()}
+              onDrop={handleDrop}
+              onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
+              onDragLeave={() => setDragOver(false)}
+              className={`w-full max-w-2xl border-2 border-dashed rounded-3xl p-16 text-center cursor-pointer transition-all duration-200
+                ${dragOver
+                  ? 'border-violet-500 bg-violet-900/20 scale-[1.01]'
+                  : 'border-white/10 bg-white/3 hover:border-violet-500/60 hover:bg-violet-900/10'
+                }`}
+            >
+              <input ref={fileInputRef} type="file" className="hidden"
+                accept="image/jpeg,image/png,image/webp" onChange={handleFileInput} />
+              <div className="text-6xl mb-5">📤</div>
+              <p className="text-gray-200 font-semibold text-lg mb-1">拖拽图片到此处</p>
+              <p className="text-gray-500 text-sm mb-5">或</p>
+              <span className="bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium px-6 py-2.5 rounded-full transition-colors">
+                点击选择文件
+              </span>
+            </div>
+
+            {/* Tips */}
+            <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-600">
+              <span>✓ 人像 &amp; 产品图效果最佳</span>
+              <span>✓ 图片不上传到服务器</span>
+              <span>✓ 结果可直接下载 PNG</span>
+            </div>
           </div>
         )}
 
         {/* Error */}
         {error && (
-          <div className="w-full max-w-2xl bg-red-950/50 border border-red-800 text-red-300 px-5 py-4 rounded-xl text-sm">
-            ⚠️ {error}
+          <div className="w-full max-w-2xl bg-red-950/40 border border-red-800/60 text-red-300 px-5 py-4 rounded-2xl text-sm flex items-center gap-3">
+            <span className="text-lg">⚠️</span>
+            {error}
           </div>
         )}
 
-        {/* Buttons */}
+        {/* Action buttons */}
         {isLoggedIn && originalImage && (
           <div className="flex flex-wrap gap-3 justify-center">
-            {!processedImage && (
+            {!processedImage && !loading && (
               <button
                 onClick={removeBackground}
-                disabled={loading}
-                className="bg-gradient-to-r from-violet-500 to-blue-500 hover:opacity-90 disabled:opacity-40
-                  text-white font-semibold py-3 px-8 rounded-full transition-all disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 text-white font-semibold py-3.5 px-10 rounded-full shadow-lg shadow-violet-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                {loading ? '处理中…' : '✨ 去除背景'}
+                ✨ 去除背景
               </button>
             )}
             {processedImage && (
               <button
                 onClick={downloadImage}
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 px-8 rounded-full transition-all"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3.5 px-10 rounded-full shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 ⬇️ 下载 PNG
               </button>
             )}
             <button
               onClick={reset}
-              className="bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold py-3 px-8 rounded-full border border-gray-600 transition-all"
+              className="bg-white/8 hover:bg-white/12 border border-white/10 text-gray-300 font-medium py-3.5 px-8 rounded-full transition-all"
             >
               🔄 重新上传
             </button>
@@ -254,9 +276,12 @@ export default function Home() {
 
         {/* Loading */}
         {loading && (
-          <div className="flex flex-col items-center gap-4 py-4">
-            <div className="w-12 h-12 border-4 border-gray-700 border-t-violet-400 rounded-full animate-spin" />
-            <p className="text-gray-400">正在处理，请稍候…</p>
+          <div className="flex flex-col items-center gap-4 py-6">
+            <div className="relative w-16 h-16">
+              <div className="absolute inset-0 border-4 border-violet-500/20 rounded-full" />
+              <div className="absolute inset-0 border-4 border-transparent border-t-violet-400 rounded-full animate-spin" />
+            </div>
+            <p className="text-gray-400">AI 正在处理，请稍候…</p>
           </div>
         )}
 
@@ -265,30 +290,50 @@ export default function Home() {
           <div className="w-full flex flex-col items-center gap-3">
             <CompareSlider before={originalImage} after={processedImage} />
             {elapsedTime && (
-              <p className="text-gray-500 text-sm">
-                ⏱ 处理耗时 {(elapsedTime / 1000).toFixed(1)}s
-              </p>
+              <p className="text-gray-600 text-xs">⏱ 处理耗时 {(elapsedTime / 1000).toFixed(1)}s</p>
             )}
           </div>
         )}
 
-        {/* Original preview (before processing) */}
+        {/* Original preview before processing */}
         {isLoggedIn && originalImage && !processedImage && !loading && (
           <div className="w-full max-w-2xl">
-            <p className="text-gray-500 text-sm mb-2 text-center">原图预览</p>
-            <img
-              src={originalImage}
-              alt="原图"
-              className="w-full rounded-2xl shadow-lg"
-            />
+            <p className="text-gray-600 text-xs mb-3 text-center uppercase tracking-wider">原图预览</p>
+            <img src={originalImage} alt="原图" className="w-full rounded-2xl shadow-2xl ring-1 ring-white/10" />
           </div>
         )}
 
+      </main>
+
+      {/* ── Pricing & FAQ ── */}
+      <div className="border-t border-white/5">
+        <PricingSection />
       </div>
 
-      <footer className="text-center pb-8 text-gray-600 text-sm">
-        图片仅用于处理，不存储在服务器 · Powered by Remove.bg
+      {/* ── Footer ── */}
+      <footer className="border-t border-white/5 py-6 text-center text-gray-700 text-xs space-y-1">
+        <p>图片仅用于处理，不存储在服务器</p>
+        <p>© 2025 BG Remover · <a href="mailto:support@image-background--remove.shop" className="hover:text-gray-500 transition-colors">联系我们</a></p>
       </footer>
-    </main>
+    </div>
+  )
+}
+
+function GoogleIcon({ color = false }: { color?: boolean }) {
+  if (color) return (
+    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+  )
+  return (
+    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="currentColor" opacity=".9"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="currentColor" opacity=".9"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="currentColor" opacity=".9"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="currentColor" opacity=".9"/>
+    </svg>
   )
 }
