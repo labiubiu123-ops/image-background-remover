@@ -21,23 +21,25 @@ jobs:
         with:
           node-version: '20'
 
-      # npm ci 在此 CI 环境有已知 bug，改用 npm install
+      # 用 pnpm 绕开 npm 10.x 的 Exit handler bug
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: pnpm install --no-frozen-lockfile
         timeout-minutes: 5
 
-      # Step 1: Next.js 标准构建
+      # Next.js 标准构建（用项目本地的 next，确保版本正确）
       - name: Build Next.js
-        run: npx next build
+        run: pnpm exec next build
         env:
           NODE_ENV: production
 
-      # Step 2: 用 next-on-pages 将 .next 转换为 CF Pages Worker 格式
-      # --skip-build 跳过内部的 vercel build，直接读取已有的 .next 产物
+      # 将 .next 转为 Cloudflare Pages Worker 格式（跳过内部 vercel build）
       - name: Convert to Cloudflare Pages format
-        run: npx @cloudflare/next-on-pages --skip-build
+        run: pnpm exec next-on-pages --skip-build
 
-      # Step 3: 部署到 Cloudflare Pages
+      # 部署
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
