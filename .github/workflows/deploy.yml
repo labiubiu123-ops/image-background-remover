@@ -34,24 +34,27 @@ jobs:
         env:
           NODE_ENV: production
 
-      # Step 2: 用 vercel build --prebuilt 把已有的 .next/ 转成 .vercel/output/
-      # --prebuilt 跳过构建步骤，直接读取 .next/ 做格式转换，不会触发 npm install
-      - name: Convert .next to Vercel output format
-        run: pnpm exec vercel build --prebuilt --yes
-        env:
-          VERCEL_ORG_ID: 'dummy'
-          VERCEL_PROJECT_ID: 'dummy'
-
-      # Step 3: next-on-pages --skip-build 生成 Cloudflare Worker JS
-      - name: Generate Cloudflare Worker
+      # Step 2: next-on-pages --skip-build 生成 .vercel/output/static/
+      - name: Generate Cloudflare Pages output
         run: pnpm exec next-on-pages --skip-build
 
-      # Step 4: 用最新的 .next/static 覆盖 .vercel/output/static/_next/static
-      # 确保 index.html 引用的 chunk hash 与实际上传的文件一致
-      - name: Sync static chunks
+      # Step 3: 用本次构建的最新 .next/static/ 完全替换 .vercel/output/static/_next/static/
+      # 这样 index.html 里引用的 chunk hash 与实际文件一致
+      - name: Sync latest static chunks into output
         run: |
+          echo "=== Chunks BEFORE sync ==="
+          ls .vercel/output/static/_next/static/chunks/app/ || true
           rm -rf .vercel/output/static/_next/static
           cp -r .next/static .vercel/output/static/_next/static
+          echo "=== Chunks AFTER sync ==="
+          ls .vercel/output/static/_next/static/chunks/app/ || true
+
+      # Step 4: 验证新代码确实存在
+      - name: Verify new features in output
+        run: |
+          echo "Checking for credits/pricing code..."
+          grep -r "积分\|credits\|pricing" .vercel/output/static/_next/static/ --include="*.js" -l || echo "WARNING: not found in static chunks"
+          grep -r "积分\|credits\|pricing" .vercel/output/static/_worker.js/ --include="*.js" -l || echo "INFO: not in worker (expected for client components)"
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
