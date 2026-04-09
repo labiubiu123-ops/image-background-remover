@@ -28,22 +28,30 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         timeout-minutes: 5
 
-      # Next.js 标准构建
+      # Step 1: Next.js 标准构建，生成 .next/
       - name: Build Next.js
         run: pnpm exec next build
         env:
           NODE_ENV: production
 
-      # 转为 Cloudflare Pages Worker 格式
-      - name: Convert to Cloudflare Pages format
+      # Step 2: 用 vercel build --prebuilt 把已有的 .next/ 转成 .vercel/output/
+      # --prebuilt 跳过构建步骤，直接读取 .next/ 做格式转换，不会触发 npm install
+      - name: Convert .next to Vercel output format
+        run: pnpm exec vercel build --prebuilt --yes
+        env:
+          VERCEL_ORG_ID: 'dummy'
+          VERCEL_PROJECT_ID: 'dummy'
+
+      # Step 3: next-on-pages --skip-build 生成 Cloudflare Worker JS
+      - name: Generate Cloudflare Worker
         run: pnpm exec next-on-pages --skip-build
 
-      # 关键：把 Next.js 生成的所有静态 JS/CSS chunks 复制到上传目录
-      # next-on-pages --skip-build 只处理 worker 逻辑，不复制 _next/static
-      - name: Copy static assets
+      # Step 4: 用最新的 .next/static 覆盖 .vercel/output/static/_next/static
+      # 确保 index.html 引用的 chunk hash 与实际上传的文件一致
+      - name: Sync static chunks
         run: |
-          mkdir -p .vercel/output/static/_next/static
-          cp -r .next/static/. .vercel/output/static/_next/static/
+          rm -rf .vercel/output/static/_next/static
+          cp -r .next/static .vercel/output/static/_next/static
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
