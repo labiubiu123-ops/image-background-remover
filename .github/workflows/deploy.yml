@@ -9,23 +9,35 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      NODE_OPTIONS: '--max-old-space-size=4096'
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'   # wrangler 4.x 需要 Node >= 20
-          cache: 'npm'
+          node-version: '20'
 
+      # npm ci 在此 CI 环境有已知 bug，改用 npm install
       - name: Install dependencies
-        run: npm ci
+        run: npm install --legacy-peer-deps
+        timeout-minutes: 5
 
-      - name: Build
-        run: npx @cloudflare/next-on-pages
+      # Step 1: Next.js 标准构建
+      - name: Build Next.js
+        run: npx next build
         env:
           NODE_ENV: production
 
+      # Step 2: 用 next-on-pages 将 .next 转换为 CF Pages Worker 格式
+      # --skip-build 跳过内部的 vercel build，直接读取已有的 .next 产物
+      - name: Convert to Cloudflare Pages format
+        run: npx @cloudflare/next-on-pages --skip-build
+
+      # Step 3: 部署到 Cloudflare Pages
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
