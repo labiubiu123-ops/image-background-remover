@@ -21,7 +21,6 @@ jobs:
         with:
           node-version: '20'
 
-      # 用 pnpm 绕开 npm 10.x 的 Exit handler bug
       - name: Install pnpm
         run: npm install -g pnpm
 
@@ -29,17 +28,23 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         timeout-minutes: 5
 
-      # Next.js 标准构建（用项目本地的 next，确保版本正确）
+      # Next.js 标准构建
       - name: Build Next.js
         run: pnpm exec next build
         env:
           NODE_ENV: production
 
-      # 将 .next 转为 Cloudflare Pages Worker 格式（跳过内部 vercel build）
+      # 转为 Cloudflare Pages Worker 格式
       - name: Convert to Cloudflare Pages format
         run: pnpm exec next-on-pages --skip-build
 
-      # 部署
+      # 关键：把 Next.js 生成的所有静态 JS/CSS chunks 复制到上传目录
+      # next-on-pages --skip-build 只处理 worker 逻辑，不复制 _next/static
+      - name: Copy static assets
+        run: |
+          mkdir -p .vercel/output/static/_next/static
+          cp -r .next/static/. .vercel/output/static/_next/static/
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
