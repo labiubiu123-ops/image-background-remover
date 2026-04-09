@@ -24,37 +24,24 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
+      # 安装所有依赖，包括 vercel CLI（已加入 devDependencies）
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
         timeout-minutes: 5
 
-      # Step 1: Next.js 标准构建，生成 .next/
-      - name: Build Next.js
-        run: pnpm exec next build
+      # 让 next-on-pages 内部找到 pnpm 装的 vercel，而不是自己 npm install
+      # 原理：把 pnpm store 的 .bin 加入 PATH，next-on-pages 调用 vercel build 时能直接找到
+      - name: Run next-on-pages (full build via vercel)
+        run: |
+          export PATH="$(pnpm bin):$PATH"
+          # 设置假的 Vercel 项目信息（本地构建模式，无需真实项目）
+          export VERCEL_ORG_ID="team_local"
+          export VERCEL_PROJECT_ID="prj_local"
+          # vercel build 时跳过 install（pnpm 已装好）
+          export VERCEL_BUILD_SKIP_INSTALL="1"
+          pnpm exec next-on-pages
         env:
           NODE_ENV: production
-
-      # Step 2: next-on-pages --skip-build 生成 .vercel/output/static/
-      - name: Generate Cloudflare Pages output
-        run: pnpm exec next-on-pages --skip-build
-
-      # Step 3: 用本次构建的最新 .next/static/ 完全替换 .vercel/output/static/_next/static/
-      # 这样 index.html 里引用的 chunk hash 与实际文件一致
-      - name: Sync latest static chunks into output
-        run: |
-          echo "=== Chunks BEFORE sync ==="
-          ls .vercel/output/static/_next/static/chunks/app/ || true
-          rm -rf .vercel/output/static/_next/static
-          cp -r .next/static .vercel/output/static/_next/static
-          echo "=== Chunks AFTER sync ==="
-          ls .vercel/output/static/_next/static/chunks/app/ || true
-
-      # Step 4: 验证新代码确实存在
-      - name: Verify new features in output
-        run: |
-          echo "Checking for credits/pricing code..."
-          grep -r "积分\|credits\|pricing" .vercel/output/static/_next/static/ --include="*.js" -l || echo "WARNING: not found in static chunks"
-          grep -r "积分\|credits\|pricing" .vercel/output/static/_worker.js/ --include="*.js" -l || echo "INFO: not in worker (expected for client components)"
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
