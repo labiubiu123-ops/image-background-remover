@@ -11,7 +11,6 @@ const PACKS = [
     price: '$0.99',
     priceNum: 0.99,
     unit: '$0.099/次',
-    billingNote: '一次性购买',
     highlight: false,
     features: ['10 次去背景', '积分永不过期', '全尺寸输出（透明 PNG）', '个人用途'],
   },
@@ -22,20 +21,18 @@ const PACKS = [
     price: '$3.99',
     priceNum: 3.99,
     unit: '$0.079/次',
-    billingNote: '一次性购买',
-    highlight: false,
+    highlight: true,
     features: ['50 次去背景', '积分永不过期', '全尺寸输出（透明 PNG）', '个人及商业用途'],
   },
   {
-    id: 'pro',
+    id: 'pro200',
     label: 'Pro',
-    credits: -1,
-    price: '$19.9',
-    priceNum: 19.9,
-    unit: '无限次使用',
-    billingNote: '按月订阅，随时取消',
-    highlight: true,
-    features: ['无限次去背景', '全尺寸输出（透明 PNG）', '个人及商业用途', '支持团队共享使用'],
+    credits: 200,
+    price: '$12.99',
+    priceNum: 12.99,
+    unit: '$0.065/次',
+    highlight: false,
+    features: ['200 次去背景', '积分永不过期', '全尺寸输出（透明 PNG）', '个人及商业用途'],
   },
 ]
 
@@ -100,7 +97,7 @@ export default function PricingSection() {
           简单透明的定价
         </h2>
         <p className="text-gray-400 text-lg">
-          按需购买或包月订阅，按你的节奏使用
+          按需购买，积分永不过期，无订阅负担
         </p>
       </div>
 
