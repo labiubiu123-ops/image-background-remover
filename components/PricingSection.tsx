@@ -11,8 +11,9 @@ const PACKS = [
     price: '$0.99',
     priceNum: 0.99,
     unit: '$0.099/次',
+    billingNote: '一次性购买',
     highlight: false,
-    features: ['10次去背景', '永不过期', '标准分辨率输出', '个人使用'],
+    features: ['10 次去背景', '积分永不过期', '全尺寸输出（透明 PNG）', '个人用途'],
   },
   {
     id: 'basic',
@@ -21,25 +22,31 @@ const PACKS = [
     price: '$3.99',
     priceNum: 3.99,
     unit: '$0.079/次',
-    highlight: true,
-    features: ['50次去背景', '永不过期', '高清分辨率输出', '个人 & 商业使用', '使用记录查看'],
+    billingNote: '一次性购买',
+    highlight: false,
+    features: ['50 次去背景', '积分永不过期', '全尺寸输出（透明 PNG）', '个人及商业用途'],
   },
   {
-    id: 'pro200',
+    id: 'pro',
     label: 'Pro',
-    credits: 200,
-    price: '$12.99',
-    priceNum: 12.99,
-    unit: '$0.065/次',
-    highlight: false,
-    features: ['200次去背景', '永不过期', '高清分辨率输出', '商业授权', '优先处理队列', '优先客服支持'],
+    credits: -1,
+    price: '$19.9',
+    priceNum: 19.9,
+    unit: '无限次使用',
+    billingNote: '按月订阅，随时取消',
+    highlight: true,
+    features: ['无限次去背景', '全尺寸输出（透明 PNG）', '个人及商业用途', '支持团队共享使用'],
   },
 ]
 
 const FAQS = [
   {
     q: '积分会过期吗？',
-    a: '不会。购买的积分永久有效，不设任何有效期限制，随时可以使用。',
+    a: '不会。Starter 和 Basic 套餐购买的积分永久有效，不设任何有效期限制，随时可以使用。',
+  },
+  {
+    q: 'Pro 方案是如何计费的？',
+    a: 'Pro 方案按月订阅，$19.9/月，订阅期间可无限次使用去背景功能，随时可以取消，取消后当前订阅周期仍然有效。',
   },
   {
     q: '注册后有免费额度吗？',
@@ -54,16 +61,12 @@ const FAQS = [
     a: '支持 JPG、PNG、WebP 格式，单张最大 10MB。输出均为透明背景 PNG 文件。',
   },
   {
-    q: '效果不满意怎么办？',
-    a: '我们提供 7 天内全额退款保障。如果对处理效果不满意，请联系客服申请退款。',
-  },
-  {
     q: '可以用于商业用途吗？',
-    a: 'Basic 及 Pro 积分包均包含商业授权。Starter 包及免费额度仅限个人非商业使用。',
+    a: 'Basic 套餐及 Pro 方案均支持个人及商业用途。Starter 套餐及免费额度仅限个人非商业使用。',
   },
   {
     q: '支持哪些支付方式？',
-    a: '即将支持 PayPal，后续将陆续接入更多支付方式。敬请期待！',
+    a: '即将支持信用卡及 PayPal，后续将陆续接入更多支付方式。敬请期待！',
   },
   {
     q: '如何查看剩余积分？',
@@ -80,8 +83,12 @@ export default function PricingSection() {
       signIn('google', { callbackUrl: '/' })
       return
     }
-    // TODO: 接入 PayPal
-    alert(`支付功能即将上线！\n套餐：${pack.label} · ${pack.credits}积分 · ${pack.price}`)
+    // TODO: 接入支付
+    if (pack.id === 'pro') {
+      alert(`订阅功能即将上线！\n方案：Pro 包月 · 无限次使用 · ${pack.price}/月`)
+    } else {
+      alert(`支付功能即将上线！\n套餐：${pack.label} · ${pack.credits}积分 · ${pack.price}`)
+    }
   }
 
   return (
@@ -93,7 +100,7 @@ export default function PricingSection() {
           简单透明的定价
         </h2>
         <p className="text-gray-400 text-lg">
-          按需购买，积分永不过期，无订阅负担
+          按需购买或包月订阅，按你的节奏使用
         </p>
       </div>
 
@@ -128,8 +135,10 @@ export default function PricingSection() {
               <h3 className="text-lg font-bold text-white mb-1">{pack.label}</h3>
               <div className="flex items-baseline gap-1">
                 <span className="text-3xl font-extrabold text-white">{pack.price}</span>
+                {pack.id === 'pro' && <span className="text-gray-400 text-sm">/月</span>}
               </div>
-              <p className="text-gray-500 text-sm mt-0.5">{pack.credits} 积分 · {pack.unit}</p>
+              <p className="text-gray-500 text-sm mt-0.5">{pack.unit}</p>
+              <p className="text-gray-600 text-xs mt-0.5">{pack.billingNote}</p>
             </div>
 
             <ul className="flex-1 space-y-2.5 mb-6">
@@ -149,7 +158,9 @@ export default function PricingSection() {
                   : 'bg-white/10 hover:bg-white/15 text-white border border-white/10'
                 }`}
             >
-              {session ? `购买 ${pack.label} 包` : '登录后购买'}
+              {session
+                ? pack.id === 'pro' ? '订阅 Pro 方案' : `购买 ${pack.label} 包`
+                : '登录后购买'}
             </button>
           </div>
         ))}
